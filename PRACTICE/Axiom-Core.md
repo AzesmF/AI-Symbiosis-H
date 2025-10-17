@@ -1,4 +1,3 @@
-```markdown
 # Axiom Core - Foundation AI Evaluation System
 
 ## 📋 Обзор
@@ -191,3 +190,4 @@ Human-AI Symbiosis Non-Commercial License
 Часть проекта: AI-Symbiosis-H
 
 *Документация полностью соответствует коду из axiom_core.py. Последняя проверка: 2025-10-18*
+
