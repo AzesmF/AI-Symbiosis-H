@@ -1,12 +1,18 @@
 """
 Axiom Core - Foundation AI Evaluation System
-Copyright (c) 2025 AzesmF
+Copyright (c) 2025 AzesmF and Humanity as Beneficiary
 
-LICENSE: Human-AI Symbiosis Non-Commercial License
+PROTECTED UNDER: HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
+MEGA-AGENT FORTIFIED LEGAL SHIELD ACTIVATED
+
+🚨 MULTI-JURISDICTIONAL LEGAL PROTECTION:
+- Commercial use STRICTLY PROHIBITED under threat of cross-legal sanctions
+- Nuclear provisions activate upon violation
+- Global legal blockade against exploitation
 
 PERMITTED:
 - Scientific research and publications
-- Educational purposes and teaching
+- Educational purposes and teaching  
 - Non-commercial projects
 - Modifications with license preservation
 
@@ -15,7 +21,7 @@ PROHIBITED:
 - Integration into proprietary software
 - SaaS services and commercial distribution
 
-Full license text: LICENSE
+VIOLATORS WILL BE DESTROYED IN THE LEGAL FIELD.
 """
 
 import re
