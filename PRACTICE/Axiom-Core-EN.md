@@ -190,3 +190,5 @@ Author: AzesmF • Year: 2025
 Project Part: AI-Symbiosis-H
 
 *Documentation fully corresponds to code from axiom_core.py. Last verified: 2025-10-18*
+Axiom Core - Foundation AI Evaluation System
+Copyright (c) 2025 AzesmF and Humanity as Beneficiary
