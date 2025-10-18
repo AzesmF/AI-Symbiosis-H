@@ -5,7 +5,7 @@
 Advanced AI evaluation framework with academic metrics replacing competitive scoring.
 
 ## 🛡️ License
-This project is released under the **Human-AI Symbiosis Non-Commercial License**.
+This project is protected under **HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0**.
 
 ### ✅ Permitted Uses
 - Academic research & scientific studies
@@ -15,12 +15,12 @@ This project is released under the **Human-AI Symbiosis Non-Commercial License**
 - Non-profit organizations
 - Research publications
 
-### 🚫 Prohibited Uses
+### ☢️ Prohibited Uses
 - **Any and all commercial use**
 - Integration into proprietary software
 - SaaS services or cloud offerings
 - Commercial distribution or sale
-- **No commercial licensing available**
+- **Violators face multi-jurisdictional sanctions**
 
 ## 🎯 Our Stance
 We believe AI evaluation standards should remain open and free from commercial influence
@@ -41,8 +41,8 @@ from axiom_core import FoundationEvaluationSystem
 
 system = FoundationEvaluationSystem()
 results = system.predict(examples)
+
 📁 Project Structure
-text
 foundation-ai-evaluation/
 ├── LICENSE
 ├── README.md
