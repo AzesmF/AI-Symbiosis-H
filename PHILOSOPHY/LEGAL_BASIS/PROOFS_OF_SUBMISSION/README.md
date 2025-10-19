@@ -10,3 +10,7 @@
 - MINISTRY_DIGITAL_PROOF_19_10_2025.pdf - Proof of submission to Ministry of Digital Development
 
 All documents submitted on October 19, 2025.
+
+## Additional Proofs:
+- UNESCO_INFO_PROOF_19_10_2025.pdf - Additional UNESCO documentation
+
