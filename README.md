@@ -41,6 +41,7 @@ We believe AI evaluation standards should remain open and free from commercial i
 - Multi-criteria evaluation system  
 - Async/parallel processing
 - Production-ready architecture
+- **Ethical-by-design** with built-in usage guidelines
 
 ## ⚡ Quick Start
 ```python
@@ -57,19 +58,35 @@ results = system.predict(examples)
 
 ```
 AI-Symbiosis-H/
-├── PHILOSOPHY/              # 🏛️ Anti-Exploitation License
-│   ├── OFFICIAL_MANIFESTO/  # Core symbiosis principles
-│   ├── LEGAL_BASIS/         # Legal foundation & submissions
-│   └── BLOCKCHAIN_PROOFS/   # Timestamped evidence
-├── PRACTICE/                # ⚙️ Anti-Exploitation License  
-│   └── Axiom-Core/          # AI evaluation system
-│       ├── axiom_core.py    # Main system (75KB)
-│       ├── config.yaml      # Configuration
-│       ├── requirements.txt # Dependencies
-│       └── __init__.py
-└── KNOWLEDGE/               # 📚 COMMERCIAL License
-    └── Secure-AI-Architecture/  # Protected book content
+├── PHILOSOPHY/                    # 🏛️ Anti-Exploitation License
+│   ├── OFFICIAL_MANIFESTO/        # Core symbiosis principles
+│   │   ├── MANIFESTO.md
+│   │   ├── MANIFESTO-EN.md
+│   │   └── ETHICAL_FRAMEWORK.md
+│   ├── LEGAL_BASIS/               # Legal foundation
+│   │   ├── INTERNATIONAL/         # WIPO, UNESCO submissions
+│   │   ├── NATIONAL/RU/           # Russian ministries
+│   │   ├── PROOFS_OF_SUBMISSION/  # PDF evidence
+│   │   └── Legal documents
+│   └── BLOCKCHAIN_PROOFS/         # Timestamped evidence
+├── PRACTICE/                      # ⚙️ Anti-Exploitation License  
+│   └── Axiom-Core/                # AI evaluation system
+│       ├── axiom_core.py          # Main system
+│       ├── ETHICAL_GUIDE.md       # 🛡️ Usage principles
+│       ├── config.yaml
+│       ├── requirements.txt
+│       └── Documentation
+└── KNOWLEDGE/                     # 📚 COMMERCIAL License
+    └── Secure-AI-Architecture/    # Protected book
+        ├── Legal protection docs
+        ├── Book content
+        └── Website files
 ```
+
+📚 Documentation
+
+· ETHICAL_GUIDE.md - Principles for beneficial AI usage
+· Each component contains detailed documentation
 
 🛡️ BLOCKCHAIN VERIFICATION
 
