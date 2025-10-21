@@ -8,8 +8,13 @@
 
 2. **Transaction Hash:**
 722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45
-21.10.2025, 11:52:50
-FRAMEWORK-LICENSE
+**Date:** 21.10.2025, 11:52:50
+**Content:** FRAMEWORK-LICENSE
+
+3. **Transaction Hash:** 30d6bf68708cd2f141a02866e3addddd4b40678ec0571901d86280c5cbb9dcaf
+**Date:** 21.10.2025, 15:55:19.
+**Content:** Folder: HUMAN-AI-SYMBIOSIS-FRAMEWORK-LICENSE
+
 
 ### IPFS Proof
 1. **Directory CID:** QmaiTp0gSoJPHLFKPPTZXy8BWdQXbaoECuMrrSvEzYGvYN  
@@ -17,3 +22,6 @@ FRAMEWORK-LICENSE
 
 2. CID: QmUcVDGaAfdgsoFsTcDBkzbfonhVJok4CjLn3Ar9zWTZai
 **Contents:** FRAMEWORK-LICENSE
+
+3. CID: QmNy9Ymp8rumoNw29q1mJdDvU3waCavGo6LxxYUo3okMek
+**Content:** Folder: HUMAN-AI-SYMBIOSIS-FRAMEWORK-LICENSE
