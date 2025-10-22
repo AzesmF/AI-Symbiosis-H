@@ -1,61 +1,34 @@
-"""
-ПРОЕКТ: Axiom Core - Foundation AI Evaluation System
-ЭКОСИСТЕМА: AI-Symbiosis-H  
-ЛИЦЕНЗИЯ: HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
-СТАТУС: АКТИВНА / ПРОИЗВОДСТВЕННАЯ ГОТОВНОСТЬ
+**PROJECT:** Axiom Core - Foundation AI Evaluation System  
+**ECOSYSTEM:** AI-Symbiosis-H  
+**LICENSE:** HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0  
+**STATUS:** ACTIVE / PRODUCTION READY  
 
-ЭТИЧЕСКИЕ ПРИНЦИПЫ:
-1. Не навреди исследованиям ИИ
-2. Сохраняй прозрачность алгоритмов оценки
-3. Обеспечь равный доступ для научного сообщества
-4. Защищай от коммерческой эксплуатации
+**ETHICAL PRINCIPLES:**
+1. Do no harm to AI research
+2. Maintain evaluation algorithm transparency  
+3. Ensure equal access for scientific community
+4. Protect against commercial exploitation
 
-ЗАЩИТА:
-- Многоюрисдикционная юридическая защита
-- Блокчейн-фиксация всех версий
-- Автоматические санкции при нарушениях
+**PROTECTION:**
+- Multi-jurisdictional legal protection
+- Blockchain fixation of all versions
+- Automatic sanctions for violations
 
-РАЗРЕШЕНО:
-✅ Научные исследования и публикации
-✅ Образовательные цели и преподавание
-✅ Некоммерческие проекты
-✅ Модификации с сохранением лицензии
+**PERMITTED:**
+✅ Scientific research and publications  
+✅ Educational purposes and teaching  
+✅ Non-commercial projects  
+✅ Modifications with license preservation
 
-ЗАПРЕЩЕНО:
-❌ Любое коммерческое использование
-❌ Интеграция в проприетарное ПО
-❌ SaaS-сервисы и коммерческое распространение
+**PROHIBITED:**
+❌ Any commercial use  
+❌ Integration into proprietary software  
+❌ SaaS services and commercial distribution
 
-БЛОКЧЕЙН: QmNy9Ymp8...kMek | 30d6bf6870...dcaf
-АВТОР: Павел Сергеевич Фенин
-СОЗДАТЕЛЬ: AzesmF и Человечество как Бенефициар
-"""
+**BLOCKCHAIN:** QmNy9Ymp8...kMek | 30d6bf6870...dcaf  
+**AUTHOR:** Pavel Sergeevich Fenin  
+**CREATOR:** AzesmF and Humanity as Beneficiary
 (тестовый код)
-"""
-Axiom Core - Foundation AI Evaluation System
-Copyright (c) 2025 AzesmF and Humanity as Beneficiary
-
-PROTECTED UNDER: HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
-MEGA-AGENT FORTIFIED LEGAL SHIELD ACTIVATED
-
-🚨 MULTI-JURISDICTIONAL LEGAL PROTECTION:
-- Commercial use STRICTLY PROHIBITED under threat of cross-legal sanctions
-- Nuclear provisions activate upon violation
-- Global legal blockade against exploitation
-
-PERMITTED:
-- Scientific research and publications
-- Educational purposes and teaching  
-- Non-commercial projects
-- Modifications with license preservation
-
-PROHIBITED:
-- Any kind of commercial use
-- Integration into proprietary software
-- SaaS services and commercial distribution
-
-VIOLATORS WILL BE DESTROYED IN THE LEGAL FIELD.
-"""
 
 import re
 import numpy as np
