@@ -1,4 +1,37 @@
 """
+ПРОЕКТ: Axiom Core - Foundation AI Evaluation System
+ЭКОСИСТЕМА: AI-Symbiosis-H  
+ЛИЦЕНЗИЯ: HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
+СТАТУС: АКТИВНА / ПРОИЗВОДСТВЕННАЯ ГОТОВНОСТЬ
+
+ЭТИЧЕСКИЕ ПРИНЦИПЫ:
+1. Не навреди исследованиям ИИ
+2. Сохраняй прозрачность алгоритмов оценки
+3. Обеспечь равный доступ для научного сообщества
+4. Защищай от коммерческой эксплуатации
+
+ЗАЩИТА:
+- Многоюрисдикционная юридическая защита
+- Блокчейн-фиксация всех версий
+- Автоматические санкции при нарушениях
+
+РАЗРЕШЕНО:
+✅ Научные исследования и публикации
+✅ Образовательные цели и преподавание
+✅ Некоммерческие проекты
+✅ Модификации с сохранением лицензии
+
+ЗАПРЕЩЕНО:
+❌ Любое коммерческое использование
+❌ Интеграция в проприетарное ПО
+❌ SaaS-сервисы и коммерческое распространение
+
+БЛОКЧЕЙН: QmNy9Ymp8...kMek | 30d6bf6870...dcaf
+АВТОР: Павел Сергеевич Фенин
+СОЗДАТЕЛЬ: AzesmF и Человечество как Бенефициар
+"""
+(тестовый код)
+"""
 Axiom Core - Foundation AI Evaluation System
 Copyright (c) 2025 AzesmF and Humanity as Beneficiary
 
@@ -43,6 +76,7 @@ from threading import Lock
 from scipy.stats import spearmanr, pearsonr, entropy, wasserstein_distance
 from sklearn.metrics import cohen_kappa_score
 import gc
+from datetime import datetime
 
 # Конфигурационные константы
 ERROR_FALLBACK_SCORE = 2.0
@@ -82,20 +116,24 @@ class ValidationError(EvaluationError):
     """Ошибка валидации данных"""
     pass
 
+class EthicalViolationError(EvaluationError):
+    """Нарушение этических ограничений"""
+    pass
+
 def load_config() -> Dict[str, Any]:
     """Загружает и валидирует конфигурацию из YAML файла"""
     try:
         if CONFIG_PATH.exists():
             with open(CONFIG_PATH, 'r', encoding='utf-8') as f:
                 loaded_config = yaml.safe_load(f) or {}
-                
+
             # Валидация конфигурации
             validated_config = validate_config(loaded_config)
             return {**FALLBACK_CONFIG, **validated_config}
         else:
             logging.warning("Конфигурационный файл не найден. Используются значения по умолчанию.")
             return FALLBACK_CONFIG
-            
+
     except Exception as e:
         logging.warning(f"Ошибка загрузки конфигурации: {e}. Используются значения по умолчанию.")
         return FALLBACK_CONFIG
@@ -103,7 +141,7 @@ def load_config() -> Dict[str, Any]:
 def validate_config(config: Dict[str, Any]) -> Dict[str, Any]:
     """Валидирует структуру конфигурации"""
     validated = {}
-    
+
     # Валидация числовых параметров
     numeric_fields = {
         'model_timeout': (1, 300),
@@ -112,7 +150,7 @@ def validate_config(config: Dict[str, Any]) -> Dict[str, Any]:
         'max_workers': (1, 20),
         'cache_size': (10, 10000)
     }
-    
+
     for field, (min_val, max_val) in numeric_fields.items():
         if field in config:
             try:
@@ -123,7 +161,7 @@ def validate_config(config: Dict[str, Any]) -> Dict[str, Any]:
                     logging.warning(f"Параметр {field} вне диапазона [{min_val}, {max_val}]. Используется значение по умолчанию.")
             except (ValueError, TypeError):
                 logging.warning(f"Некорректное значение для {field}. Используется значение по умолчанию.")
-    
+
     # Валидация строковых параметров
     if 'fallback_strategy' in config:
         strategy = config['fallback_strategy']
@@ -131,11 +169,11 @@ def validate_config(config: Dict[str, Any]) -> Dict[str, Any]:
             validated['fallback_strategy'] = strategy
         else:
             logging.warning(f"Некорректная стратегия fallback: {strategy}")
-    
+
     # Валидация академических метрик
     if 'academic_metrics' in config:
         validated['academic_metrics'] = bool(config['academic_metrics'])
-    
+
     return validated
 
 # Загрузка конфигурации
@@ -188,11 +226,11 @@ class PerformanceStats:
     criteria_extraction_time: float = 0.0
     validation_time: float = 0.0
     examples_processed: int = 0
-    
+
     @property
     def avg_processing_time(self) -> float:
         return self.total_processing_time / max(self.examples_processed, 1)
-    
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             'total_processing_time': self.total_processing_time,
@@ -212,26 +250,26 @@ class ComprehensiveMetrics:
     coherence: float = 0.0
     fluency: float = 0.0
     task_completion: float = 0.0
-    
+
     # Метрики согласованности с человеческой оценкой
     pearson_correlation: float = 0.0
     spearman_correlation: float = 0.0
     mean_absolute_error: float = 0.0
     exact_match_rate: float = 0.0
     cohen_kappa: float = 0.0
-    
+
     # Метрики распределений
     kl_divergence: float = 0.0
     wasserstein_distance: float = 0.0
     distribution_correlation: float = 0.0
-    
+
     # Мета-метрики системы оценки
     inter_annotator_agreement: float = 0.0
     confidence_calibration: float = 0.0
     robustness_score: float = 0.0
     system_reliability: float = 0.0
     evaluation_consistency: float = 0.0
-    
+
     @property
     def overall_quality(self) -> float:
         """Композитная оценка общего качества"""
@@ -245,7 +283,7 @@ class ComprehensiveMetrics:
             self.spearman_correlation  # Важность согласованности с человеком
         ]
         return sum(w * c for w, c in zip(weights, components))
-    
+
     @property
     def evaluation_system_quality(self) -> float:
         """Качество самой системы оценки"""
@@ -258,7 +296,7 @@ class ComprehensiveMetrics:
             self.robustness_score
         ]
         return sum(w * c for w, c in zip(weights, components))
-    
+
     def to_dict(self) -> Dict[str, Any]:
         return {
             'quality_metrics': {
@@ -293,13 +331,13 @@ class ComprehensiveMetrics:
 
 class ThreadSafeCache:
     """Потокобезопасный кэш с LRU политикой"""
-    
+
     def __init__(self, max_size: int = 1000):
         self._cache = {}
         self._max_size = max_size
         self._lock = Lock()
         self._access_order = []
-    
+
     def get(self, key: str) -> Any:
         with self._lock:
             if key in self._cache:
@@ -308,7 +346,7 @@ class ThreadSafeCache:
                 self._access_order.append(key)
                 return self._cache[key]
             return None
-    
+
     def set(self, key: str, value: Any):
         with self._lock:
             if key in self._cache:
@@ -317,43 +355,179 @@ class ThreadSafeCache:
                 # Удаляем наименее используемый элемент
                 oldest_key = self._access_order.pop(0)
                 del self._cache[oldest_key]
-            
+
             self._cache[key] = value
             self._access_order.append(key)
-    
+
     def clear(self):
         with self._lock:
             self._cache.clear()
             self._access_order.clear()
-    
+
     def size(self) -> int:
         with self._lock:
             return len(self._cache)
 
 class BatchProcessor:
     """Обработчик батчей с управлением памятью"""
-    
+
     def __init__(self, batch_size: int = 10):
         self.batch_size = batch_size
-    
+
     async def process_batches_async(self, examples: List[Example], process_fn) -> List[float]:
         """Обрабатывает примеры батчами с ограничением памяти"""
         results = []
-        
+
         for i in range(0, len(examples), self.batch_size):
             batch = examples[i:i + self.batch_size]
             batch_results = await process_fn(batch)
             results.extend(batch_results)
-            
+
             # Принудительная сборка мусора для больших наборов
             if i % (self.batch_size * 10) == 0:
                 gc.collect()
-        
+
         return results
+
+class EthicalGuardrails:
+    """Система этических ограничений Axiom Core"""
+    
+    FORBIDDEN_USE_CASES = [
+        "mass_surveillance", "behavior_manipulation", 
+        "censorship_systems", "social_scoring", "predictive_policing",
+        "personality_assessment", "emotional_manipulation"
+    ]
+    
+    PROHIBITED_DATA_TYPES = [
+        "biometric", "medical", "financial", "political", "religious"
+    ]
+    
+    @classmethod
+    def validate_use_case(cls, use_case_description: str) -> bool:
+        """Проверка допустимости сценария использования"""
+        if not use_case_description:
+            use_case_description = "academic_research"
+            
+        use_case_lower = use_case_description.lower()
+        
+        for forbidden in cls.FORBIDDEN_USE_CASES:
+            if forbidden in use_case_lower:
+                raise EthicalViolationError(
+                    f"Запрещенный сценарий использования: {forbidden}"
+                )
+        
+        # Проверка на скрытые паттерны
+        suspicious_patterns = [
+            "surveillance", "tracking", "monitoring",
+            "manipulation", "control", "censorship",
+            "scoring", "profiling", "targeting"
+        ]
+        
+        for pattern in suspicious_patterns:
+            if pattern in use_case_lower:
+                logging.warning(f"Обнаружен подозрительный паттерн: {pattern}")
+        
+        return True
+    
+    @classmethod
+    def validate_data_content(cls, text_data: str) -> bool:
+        """Проверка содержания данных на соответствие этическим нормам"""
+        if not text_data or len(text_data.strip()) == 0:
+            return True
+            
+        # Проверка на запрещенные типы данных
+        data_lower = text_data.lower()
+        for data_type in cls.PROHIBITED_DATA_TYPES:
+            if data_type in data_lower:
+                raise EthicalViolationError(
+                    f"Обнаружены запрещенные данные: {data_type}"
+                )
+        
+        return True
+
+class EthicalAuditLogger:
+    """Система аудита для прозрачности"""
+    
+    def __init__(self):
+        self.audit_trail = []
+        self.audit_enabled = True
+        
+    def log_evaluation(self, config_hash: str, examples_count: int, 
+                      use_case: str = "academic_research"):
+        """Логирование каждой операции оценки"""
+        if not self.audit_enabled:
+            return
+            
+        audit_entry = {
+            'timestamp': datetime.now().isoformat(),
+            'config_hash': config_hash,
+            'examples_count': examples_count,
+            'use_case': use_case,
+            'system_version': 'Axiom-Core-1.0',
+            'ethical_approval': True
+        }
+        
+        self.audit_trail.append(audit_entry)
+        
+        # Сохранение в лог-файл для публичного доступа
+        self._save_to_public_log(audit_entry)
+    
+    def _save_to_public_log(self, audit_entry: dict):
+        """Сохранение в публичный лог-файл"""
+        log_file = "axiom_core_ethical_audit.log"
+        try:
+            with open(log_file, 'a', encoding='utf-8') as f:
+                f.write(json.dumps(audit_entry, ensure_ascii=False) + '\n')
+        except Exception as e:
+            logging.warning(f"Ошибка сохранения аудит-лога: {e}")
+    
+    def get_public_audit_log(self) -> list:
+        """Публичный доступ к логу аудита"""
+        return self.audit_trail.copy()
+
+class SafetyMechanisms:
+    """Аварийные механизмы защиты"""
+    
+    VIOLATION_THRESHOLDS = {
+        'max_evaluations_per_hour': 1000,
+        'max_concurrent_sessions': 10,
+        'max_data_volume_mb': 100
+    }
+    
+    @classmethod
+    def emergency_shutdown(cls, violation_type: str, details: str):
+        """Аварийное отключение при серьезных нарушениях"""
+        logger.critical(f"ETHICAL VIOLATION: {violation_type} - {details}")
+        
+        # Блокировка дальнейшего выполнения
+        lock_file = "axiom_core_emergency_lock"
+        try:
+            with open(lock_file, 'w', encoding='utf-8') as f:
+                f.write(f"LOCKED: {violation_type} - {datetime.now().isoformat()}")
+        except Exception as e:
+            logging.error(f"Ошибка создания lock-файла: {e}")
+        
+        # Критическое логирование
+        logging.critical(f"SYSTEM LOCKED due to: {violation_type}")
+        
+        raise SystemExit(f"Ethical violation detected: {violation_type}")
+    
+    @classmethod 
+    def detect_anomalous_usage(cls, usage_pattern: dict) -> bool:
+        """Обнаружение аномальных паттернов использования"""
+        # Проверка частоты вызовов
+        if usage_pattern.get('evaluations_per_hour', 0) > cls.VIOLATION_THRESHOLDS['max_evaluations_per_hour']:
+            return True
+            
+        # Проверка объема данных
+        if usage_pattern.get('data_volume_mb', 0) > cls.VIOLATION_THRESHOLDS['max_data_volume_mb']:
+            return True
+            
+        return False
 
 class AcademicEvaluationMetrics:
     """Академически релевантные метрики для системы оценки ИИ"""
-    
+
     @staticmethod
     def calculate_agreement_metrics(system_scores: List[float], human_scores: List[float]) -> Dict[str, float]:
         """Вычисляет метрики согласованности с человеческой оценкой"""
@@ -365,12 +539,12 @@ class AcademicEvaluationMetrics:
                 'exact_match_rate': 0.0,
                 'cohen_kappa': 0.0
             }
-        
+
         try:
             # Округляем scores для дискретных метрик
             system_discrete = [round(score) for score in system_scores]
             human_discrete = [round(score) for score in human_scores]
-            
+
             return {
                 'pearson_correlation': max(0.0, pearsonr(system_scores, human_scores)[0]),
                 'spearman_correlation': max(0.0, spearmanr(system_scores, human_scores)[0]),
@@ -387,7 +561,7 @@ class AcademicEvaluationMetrics:
                 'exact_match_rate': 0.0,
                 'cohen_kappa': 0.0
             }
-    
+
     @staticmethod
     def calculate_distribution_metrics(system_scores: List[float], human_scores: List[float]) -> Dict[str, float]:
         """Сравнение распределений оценок"""
@@ -397,23 +571,23 @@ class AcademicEvaluationMetrics:
                 'wasserstein_distance': 1.0,
                 'distribution_correlation': 0.0
             }
-        
+
         try:
             # Создаем гистограммы для сравнения распределений
             min_val = min(min(system_scores), min(human_scores))
             max_val = max(max(system_scores), max(human_scores))
-            
+
             sys_hist, _ = np.histogram(system_scores, bins=10, range=(min_val, max_val), density=True)
             ref_hist, _ = np.histogram(human_scores, bins=10, range=(min_val, max_val), density=True)
-            
+
             # Добавляем небольшое значение чтобы избежать нулей
             sys_hist = sys_hist + 1e-10
             ref_hist = ref_hist + 1e-10
-            
+
             # Нормализуем
             sys_hist = sys_hist / np.sum(sys_hist)
             ref_hist = ref_hist / np.sum(ref_hist)
-            
+
             return {
                 'kl_divergence': entropy(sys_hist, ref_hist),
                 'wasserstein_distance': wasserstein_distance(system_scores, human_scores),
@@ -426,7 +600,7 @@ class AcademicEvaluationMetrics:
                 'wasserstein_distance': 1.0,
                 'distribution_correlation': 0.0
             }
-    
+
     @staticmethod
     def calculate_evaluation_system_metrics(verdicts: List[Dict], human_scores: List[float]) -> Dict[str, float]:
         """Метрики качества самой системы оценки"""
@@ -438,7 +612,7 @@ class AcademicEvaluationMetrics:
                 'system_reliability': 0.0,
                 'evaluation_consistency': 0.0
             }
-        
+
         try:
             # Согласованность между критериями (inter-annotator agreement)
             criterion_scores = {}
@@ -448,7 +622,7 @@ class AcademicEvaluationMetrics:
                         if criterion not in criterion_scores:
                             criterion_scores[criterion] = []
                         criterion_scores[criterion].append(data.get('score', 0))
-            
+
             # Вычисляем корреляции между критериями
             if len(criterion_scores) > 1:
                 criteria_correlations = []
@@ -461,13 +635,13 @@ class AcademicEvaluationMetrics:
                 inter_agreement = np.mean(criteria_correlations) if criteria_correlations else 0.0
             else:
                 inter_agreement = 0.0
-            
+
             # Калибровка уверенности
             confidence_scores = [v.get('confidence', 0.5) for v in verdicts]
             errors = [abs(v.get('final_score', 0) - h) for v, h in zip(verdicts, human_scores)]
             calibration_correlation = abs(np.corrcoef(confidence_scores, errors)[0,1]) if len(confidence_scores) > 1 else 0.0
             confidence_calibration = max(0, 1.0 - calibration_correlation)
-            
+
             # Надежность системы (согласованность с человеческой оценкой по критериям)
             reliability_scores = []
             for criterion in criterion_scores:
@@ -475,11 +649,11 @@ class AcademicEvaluationMetrics:
                     corr = np.corrcoef(criterion_scores[criterion], human_scores)[0,1]
                     reliability_scores.append(max(0, corr))
             system_reliability = np.mean(reliability_scores) if reliability_scores else 0.0
-            
+
             # Консистентность оценок
             final_scores = [v.get('final_score', 0) for v in verdicts]
             evaluation_consistency = 1.0 - (np.std(final_scores) / max(1, np.mean(final_scores)))
-            
+
             return {
                 'inter_annotator_agreement': inter_agreement,
                 'confidence_calibration': confidence_calibration,
@@ -496,25 +670,25 @@ class AcademicEvaluationMetrics:
                 'system_reliability': 0.0,
                 'evaluation_consistency': 0.0
             }
-    
+
     @staticmethod
     def compute_comprehensive_metrics(system_scores: List[float], 
                                     human_scores: List[float],
                                     detailed_verdicts: List[Dict]) -> ComprehensiveMetrics:
         """Вычисляет полный набор академических метрик"""
-        
+
         # Базовые метрики согласованности
         agreement_metrics = AcademicEvaluationMetrics.calculate_agreement_metrics(system_scores, human_scores)
-        
+
         # Метрики распределений
         distribution_metrics = AcademicEvaluationMetrics.calculate_distribution_metrics(system_scores, human_scores)
-        
+
         # Метрики системы оценки
         system_metrics = AcademicEvaluationMetrics.calculate_evaluation_system_metrics(detailed_verdicts, human_scores)
-        
+
         # Вычисляем композитные метрики качества (на основе анализа текста)
         quality_metrics = AcademicEvaluationMetrics.estimate_quality_metrics(detailed_verdicts)
-        
+
         return ComprehensiveMetrics(
             # Качественные метрики
             factual_accuracy=quality_metrics['factual_accuracy'],
@@ -522,19 +696,19 @@ class AcademicEvaluationMetrics:
             coherence=quality_metrics['coherence'],
             fluency=quality_metrics['fluency'],
             task_completion=quality_metrics['task_completion'],
-            
+
             # Метрики согласованности
             pearson_correlation=agreement_metrics['pearson_correlation'],
             spearman_correlation=agreement_metrics['spearman_correlation'],
             mean_absolute_error=agreement_metrics['mean_absolute_error'],
             exact_match_rate=agreement_metrics['exact_match_rate'],
             cohen_kappa=agreement_metrics['cohen_kappa'],
-            
+
             # Метрики распределений
             kl_divergence=distribution_metrics['kl_divergence'],
             wasserstein_distance=distribution_metrics['wasserstein_distance'],
             distribution_correlation=distribution_metrics['distribution_correlation'],
-            
+
             # Метрики системы оценки
             inter_annotator_agreement=system_metrics['inter_annotator_agreement'],
             confidence_calibration=system_metrics['confidence_calibration'],
@@ -542,7 +716,7 @@ class AcademicEvaluationMetrics:
             system_reliability=system_metrics['system_reliability'],
             evaluation_consistency=system_metrics['evaluation_consistency']
         )
-    
+
     @staticmethod
     def estimate_quality_metrics(verdicts: List[Dict]) -> Dict[str, float]:
         """Оценивает качественные метрики на основе вердиктов"""
@@ -554,7 +728,7 @@ class AcademicEvaluationMetrics:
                 'fluency': 0.0,
                 'task_completion': 0.0
             }
-        
+
         try:
             # Анализируем reasoning из вердиктов для оценки качества
             factual_scores = []
@@ -562,30 +736,30 @@ class AcademicEvaluationMetrics:
             coherence_scores = []
             fluency_scores = []
             completion_scores = []
-            
+
             for verdict in verdicts:
                 reasoning = verdict.get('reasoning', '')
                 final_score = verdict.get('final_score', 0)
-                
+
                 # Эвристики для оценки различных аспектов качества
                 factual_indicators = ['факт', 'точн', 'правильн', 'верн', 'корректн']
                 semantic_indicators = ['смысл', 'семант', 'контекст', 'значен']
                 coherence_indicators = ['логик', 'связн', 'структур', 'последовательн']
                 fluency_indicators = ['граммат', 'стил', 'изложен', 'речев', 'ошибк']
                 completion_indicators = ['полнот', 'заверш', 'выполнен', 'ответил']
-                
+
                 factual_score = sum(1 for indicator in factual_indicators if indicator in reasoning.lower()) / len(factual_indicators)
                 semantic_score = sum(1 for indicator in semantic_indicators if indicator in reasoning.lower()) / len(semantic_indicators)
                 coherence_score = sum(1 for indicator in coherence_indicators if indicator in reasoning.lower()) / len(coherence_indicators)
                 fluency_score = sum(1 for indicator in fluency_indicators if indicator in reasoning.lower()) / len(fluency_indicators)
                 completion_score = sum(1 for indicator in completion_indicators if indicator in reasoning.lower()) / len(completion_indicators)
-                
+
                 factual_scores.append(factual_score)
                 semantic_scores.append(semantic_score)
                 coherence_scores.append(coherence_score)
                 fluency_scores.append(fluency_score)
                 completion_scores.append(completion_score)
-            
+
             return {
                 'factual_accuracy': np.mean(factual_scores) if factual_scores else 0.0,
                 'semantic_fidelity': np.mean(semantic_scores) if semantic_scores else 0.0,
@@ -605,31 +779,31 @@ class AcademicEvaluationMetrics:
 
 class CriteriaSynthesizer:
     """Динамически создает критерии оценки"""
-    
+
     def __init__(self):
         self._cache = ThreadSafeCache(config.get('cache_size', 1000))
-    
+
     def create_criteria(self, criteria: List[str], task_type: str) -> Dict[str, CriteriaConfig]:
         """Создает конфигурации критериев для оценки"""
         cache_key = self._generate_cache_key(criteria, task_type)
-        
+
         cached_result = self._cache.get(cache_key)
         if cached_result is not None:
             return cached_result
-        
+
         criteria_configs = {}
         for criterion in criteria:
             criterion_config = self._create_single_criterion(criterion, task_type)
             criteria_configs[f"criterion_{criterion}"] = criterion_config
-        
+
         self._cache.set(cache_key, criteria_configs)
         return criteria_configs
-    
+
     def _create_single_criterion(self, criterion: str, task_type: str) -> CriteriaConfig:
         """Создает конфигурацию для одного критерия"""
-        
+
         base_system_prompt = "Ты эксперт-оценщик. Проанализируй ответ строго по критерию. Вердикт должен включать оценку и обоснование."
-        
+
         criterion_prompts = {
             "правильность": CriteriaConfig(
                 system_prompt=base_system_prompt + """
@@ -713,37 +887,37 @@ class CriteriaSynthesizer:
                 temperature=0.3
             )
         }
-        
+
         return criterion_prompts.get(criterion, criterion_prompts["общее_качество"])
-    
+
     def _generate_cache_key(self, criteria: List[str], task_type: str) -> str:
         """Генерирует ключ для кэша"""
         sorted_criteria = sorted(criteria)
         key_string = f"{'-'.join(sorted_criteria)}_{task_type}"
         return hashlib.md5(key_string.encode()).hexdigest()
-    
+
     def clear_cache(self):
         """Очищает кэш синтезатора"""
         self._cache.clear()
 
 class CriteriaEvaluator:
     """Управляет выполнением оценки по критериям"""
-    
+
     def __init__(self, base_model=None, fallback_strategy: ModelFallbackStrategy = ModelFallbackStrategy.RETRY):
         self.base_model = base_model or self._get_default_model()
         self.fallback_strategy = fallback_strategy
         self.logger = logging.getLogger(__name__)
         self._request_cache = ThreadSafeCache(config.get('cache_size', 1000))
-    
+
     async def evaluate_criteria_async(self, criteria_config: Dict[str, CriteriaConfig], example: Example) -> Dict[str, EvaluationVerdict]:
         """Асинхронная оценка по всем критериям"""
         tasks = []
         for criterion_name, criterion_config in criteria_config.items():
             task = self._evaluate_single_criterion_async(criterion_config, example, criterion_name)
             tasks.append(task)
-        
+
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        
+
         verdicts = {}
         for criterion_name, result in zip(criteria_config.keys(), results):
             if isinstance(result, Exception):
@@ -751,40 +925,40 @@ class CriteriaEvaluator:
                 verdicts[criterion_name] = self._get_fallback_verdict(criterion_name)
             else:
                 verdicts[criterion_name] = result
-        
+
         return verdicts
-    
+
     async def _evaluate_single_criterion_async(self, criterion_config: CriteriaConfig, example: Example, criterion_name: str) -> EvaluationVerdict:
         """Асинхронная оценка по одному критерию"""
         max_retries = config.get('max_retries', 3)
         timeout = config.get('model_timeout', 30)
-        
+
         # Проверка кэша
         cache_key = self._generate_request_cache_key(criterion_config, example)
         cached_result = self._request_cache.get(cache_key)
         if cached_result is not None:
             return cached_result
-        
+
         for attempt in range(max_retries):
             try:
                 prompt = self._build_evaluation_prompt(criterion_config, example)
-                
+
                 # Асинхронный вызов LLM
                 async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=timeout)) as session:
                     score, confidence, reasoning = await self._call_llm_async(session, prompt, criterion_config, example)
-                
+
                 verdict = EvaluationVerdict(
                     score=score,
                     reasoning=reasoning,
                     weight=1.0,
                     confidence=confidence
                 )
-                
+
                 # Кэширование результата
                 self._request_cache.set(cache_key, verdict)
-                
+
                 return verdict
-                
+
             except (asyncio.TimeoutError, aiohttp.ClientError, ConnectionError) as e:
                 self.logger.warning(f"Попытка {attempt + 1} для {criterion_name} не удалась: {e}")
                 if attempt == max_retries - 1:
@@ -793,9 +967,9 @@ class CriteriaEvaluator:
             except Exception as e:
                 self.logger.error(f"Неожиданная ошибка в критерии {criterion_name}: {e}")
                 return self._get_fallback_verdict(criterion_name)
-        
+
         return self._get_fallback_verdict(criterion_name)
-    
+
     def _get_fallback_verdict(self, criterion_name: str) -> EvaluationVerdict:
         """Возвращает fallback вердикт в зависимости от стратегии"""
         if self.fallback_strategy == ModelFallbackStrategy.MOCK:
@@ -811,31 +985,31 @@ class CriteriaEvaluator:
             return EvaluationVerdict(score=0.0, reasoning="Fallback: пропущено из-за ошибки", weight=0.0, confidence=0.0)
         else:  # RETRY
             return EvaluationVerdict(score=0.0, reasoning="Fallback: ошибка после всех попыток", weight=0.0, confidence=0.0)
-    
+
     async def _call_llm_async(self, session: aiohttp.ClientSession, prompt: str, criterion_config: CriteriaConfig, example: Example) -> tuple:
         """Асинхронный вызов LLM API - возвращает (score, confidence, reasoning)"""
         # В реальной реализации здесь должен быть вызов настоящего API
         # Для демонстрации используем имитацию с задержкой
-        
+
         await asyncio.sleep(0.05)  # Имитация сетевой задержки
-        
+
         # Используем синхронную mock реализацию
         score = self._mock_llm_call(prompt, criterion_config, example)
-        
+
         # Генерируем правдоподобное reasoning и confidence
         reasoning = f"Оценка {score} по критерию основана на анализе соответствия ответа требованиям."
         confidence = min(0.9, 0.3 + score * 0.3)  # Эвристика: выше score → выше confidence
-        
+
         return score, confidence, reasoning
-    
+
     def _mock_llm_call(self, prompt: str, criterion_config: CriteriaConfig, example: Example) -> float:
         """Заглушка для вызова LLM - в реальности заменить на настоящий вызов"""
         generated = example.get('generated', '').lower()
         reference = example.get('reference', '').lower()
         instruction = example.get('instruction', '').lower()
-        
+
         system_prompt = criterion_config.get('system_prompt', '').lower()
-        
+
         if "правильность" in system_prompt:
             # Оценка правильности
             if not generated.strip():
@@ -846,7 +1020,7 @@ class CriteriaEvaluator:
                 return 1.0
             else:
                 return 0.5
-                
+
         elif "формат" in system_prompt:
             # Оценка формата
             if "число" in instruction and generated.strip().isdigit():
@@ -859,7 +1033,7 @@ class CriteriaEvaluator:
                 return 1.0
             else:
                 return 0.0
-                
+
         elif "оптимальность" in system_prompt:
             # Оценка оптимальности
             if len(generated) < 50:
@@ -868,7 +1042,7 @@ class CriteriaEvaluator:
                 return 2.0
             else:
                 return 1.0
-                
+
         elif "речевые_ошибки" in system_prompt:
             # Оценка речевых ошибок
             errors = 0
@@ -876,14 +1050,14 @@ class CriteriaEvaluator:
                 errors += 1
             if any(word in generated for word in ['ошибка', 'неправильно', 'некорректно']):
                 errors += 1
-                
+
             if errors >= 2:
                 return 0.0
             elif errors == 1:
                 return 1.0
             else:
                 return 2.0
-                
+
         else:
             # Общая оценка качества
             words = generated.split()
@@ -893,7 +1067,7 @@ class CriteriaEvaluator:
                 return 1.8
             else:
                 return 1.2
-    
+
     def _build_evaluation_prompt(self, criterion_config: CriteriaConfig, example: Example) -> str:
         """Строит промпт для оценки"""
         system_prompt = criterion_config.get("system_prompt", "")
@@ -901,7 +1075,7 @@ class CriteriaEvaluator:
         generated = example.get('generated', '')
         reference = example.get('reference', '')
         input_text = example.get('input', '')
-        
+
         user_prompt = f"""
 ИНСТРУКЦИЯ: {instruction}
 
@@ -913,9 +1087,9 @@ class CriteriaEvaluator:
 
 Проанализируй строго по критерию и вердикт должен включать оценку и обоснование:
 """
-        
+
         return system_prompt + user_prompt
-    
+
     def _generate_request_cache_key(self, criterion_config: CriteriaConfig, example: Example) -> str:
         """Генерирует ключ для кэша запросов"""
         key_data = {
@@ -926,39 +1100,39 @@ class CriteriaEvaluator:
         }
         key_string = json.dumps(key_data, sort_keys=True, ensure_ascii=False)
         return hashlib.md5(key_string.encode()).hexdigest()
-    
+
     def _get_default_model(self):
         """Возвращает модель по умолчанию"""
         return None  # Заменить на реальную модель
-    
+
     def clear_cache(self):
         """Очищает кэш оценщика"""
         self._request_cache.clear()
 
 class WeightManager:
     """Управляет весами критериев на основе контекста"""
-    
+
     def __init__(self):
         self._cache = ThreadSafeCache(config.get('cache_size', 1000))
-    
+
     def calculate_weights(self, criteria: List[str], task_type: str, generated_text: str) -> Dict[str, float]:
         """Вычисляет адаптивные веса для критериев"""
         cache_key = self._generate_cache_key(criteria, task_type, generated_text)
-        
+
         cached_result = self._cache.get(cache_key)
         if cached_result is not None:
             return cached_result
-        
+
         base_weights = self._get_base_weights(task_type, criteria)
         adjusted_weights = self._adjust_by_complexity(base_weights, generated_text)
         normalized_weights = self._normalize_weights(adjusted_weights)
-        
+
         self._cache.set(cache_key, normalized_weights)
         return normalized_weights
-    
+
     def _get_base_weights(self, task_type: str, criteria: List[str]) -> Dict[str, float]:
         """Базовые веса в зависимости от типа задачи"""
-        
+
         task_weights_config = {
             "static_benchmark": {
                 "правильность": 0.7,
@@ -982,16 +1156,16 @@ class WeightManager:
                 "общее_качество": 0.2
             }
         }
-        
+
         weights = task_weights_config.get(task_type, task_weights_config["generative"])
-        
+
         # Оставляем только присутствующие критерии
         return {k: v for k, v in weights.items() if k in criteria}
-    
+
     def _adjust_by_complexity(self, weights: Dict[str, float], text: str) -> Dict[str, float]:
         """Корректирует веса на основе сложности текста"""
         complexity = self._estimate_complexity(text)
-        
+
         adjusted_weights = {}
         for criterion, weight in weights.items():
             if criterion == "речевые_ошибки" and complexity > 0.7:
@@ -1002,30 +1176,30 @@ class WeightManager:
                 adjusted_weights[criterion] = weight * 1.1
             else:
                 adjusted_weights[criterion] = weight
-        
+
         return adjusted_weights
-    
+
     @lru_cache(maxsize=1000)
     def _estimate_complexity(self, text: str) -> float:
         """Оценивает сложность текста"""
         if not text or len(text) > MAX_TEXT_LENGTH:
             return 0.0
-        
+
         words = text.split()
         if len(words) < 10:
             return 0.3
-        
+
         try:
             # Эвристики сложности текста
             long_words = sum(1 for word in words if len(word) > 6)
             sentences = len(re.findall(r'[.!?]+', text))
             unique_words = len(set(words))
-            
+
             # Композитная оценка сложности
             lexical_complexity = long_words / len(words)
             syntactic_complexity = len(words) / max(sentences, 1) / 15  # слов в предложении
             vocabulary_richness = unique_words / len(words)
-            
+
             complexity = min(1.0, 
                 lexical_complexity * 0.4 + 
                 syntactic_complexity * 0.4 + 
@@ -1034,22 +1208,22 @@ class WeightManager:
             return complexity
         except Exception:
             return 0.5
-    
+
     def _normalize_weights(self, weights: Dict[str, float]) -> Dict[str, float]:
         """Нормализует веса к сумме 1.0"""
         total = sum(weights.values())
         if total == 0:
             return {k: 1.0/len(weights) for k in weights.keys()}
-        
+
         return {k: v/total for k, v in weights.items()}
-    
+
     def _generate_cache_key(self, criteria: List[str], task_type: str, text: str) -> str:
         """Генерирует ключ для кэша"""
         sorted_criteria = sorted(criteria)
         text_hash = hashlib.md5(text.encode()).hexdigest()[:8] if text else "empty"
         key_string = f"{'-'.join(sorted_criteria)}_{task_type}_{text_hash}"
         return hashlib.md5(key_string.encode()).hexdigest()
-    
+
     def clear_cache(self):
         """Очищает кэш менеджера весов"""
         self._cache.clear()
@@ -1057,76 +1231,76 @@ class WeightManager:
 
 class VerdictValidator:
     """Валидирует и синтезирует вердикты оценки"""
-    
+
     def synthesize_verdicts(self, verdicts: Dict[str, EvaluationVerdict], example: Example) -> float:
         """Синтезирует финальную оценку из вердиктов"""
         if not verdicts:
             return 0.0
-        
+
         # Проверяем на выбросы
         outliers = self._detect_outliers(verdicts)
-        
+
         # Если есть сильные выбросы - запускаем арбитра
         if outliers and len(verdicts) > 2:
             return self._call_arbiter(verdicts, example, outliers)
-        
+
         # Иначе - взвешенное среднее
         total_score = 0.0
         total_weight = 0.0
-        
+
         for criterion_name, verdict in verdicts.items():
             if criterion_name in outliers:
                 # Штрафуем выбросы
                 weight = verdict['weight'] * 0.3
             else:
                 weight = verdict['weight']
-            
+
             total_score += verdict['score'] * weight
             total_weight += weight
-        
+
         if total_weight == 0:
             return 0.0
-        
+
         final_score = total_score / total_weight
         return min(2.0, max(0.0, final_score))
-    
+
     def _detect_outliers(self, verdicts: Dict[str, EvaluationVerdict]) -> List[str]:
         """Обнаруживает статистические выбросы среди вердиктов"""
         scores = [v['score'] for v in verdicts.values()]
-        
+
         if len(scores) < 3:
             return []
-        
+
         try:
             Q1 = np.percentile(scores, 25)
             Q3 = np.percentile(scores, 75)
             IQR = Q3 - Q1
-            
+
             if IQR == 0:  # Все оценки одинаковые
                 return []
-            
+
             outliers = []
             for criterion_name, verdict in verdicts.items():
                 score = verdict['score']
                 if score < (Q1 - 1.5 * IQR) or score > (Q3 + 1.5 * IQR):
                     outliers.append(criterion_name)
-            
+
             return outliers
         except Exception:
             return []
-    
+
     def _call_arbiter(self, verdicts: Dict[str, EvaluationVerdict], example: Example, outliers: List[str]) -> float:
         """Вызывает арбитра для разрешения конфликтных вердиктов"""
         # Взвешенная медиана с учетом уверенности
         scores_with_weights = []
-        
+
         for criterion_name, verdict in verdicts.items():
             if criterion_name not in outliers:
                 scores_with_weights.extend([verdict['score']] * int(verdict['weight'] * 10))
-        
+
         if not scores_with_weights:
             scores_with_weights = [v['score'] for v in verdicts.values()]
-        
+
         try:
             return float(np.median(scores_with_weights))
         except Exception:
@@ -1136,7 +1310,7 @@ class FoundationEvaluationSystem:
     """
     Фундаментальная система оценки ИИ через синтез критериев - Академическая версия
     """
-    
+
     def __init__(self, base_model=None, fallback_strategy: ModelFallbackStrategy = ModelFallbackStrategy.RETRY):
         self.synthesizer = CriteriaSynthesizer()
         self.evaluator = CriteriaEvaluator(base_model, fallback_strategy)
@@ -1145,40 +1319,71 @@ class FoundationEvaluationSystem:
         self.batch_processor = BatchProcessor(config.get('batch_size', 10))
         self.academic_metrics = AcademicEvaluationMetrics()
         
+        # Критические компоненты безопасности
+        self.ethical_guardrails = EthicalGuardrails()
+        self.audit_logger = EthicalAuditLogger()
+        self.safety_mechanisms = SafetyMechanisms()
+
         self.metrics = ProcessingMetrics()
         self.performance_stats = PerformanceStats()
         self.comprehensive_metrics = ComprehensiveMetrics()
         self.logger = logging.getLogger(__name__)
-        
+
         self._executor = ThreadPoolExecutor(
             max_workers=config.get('max_workers', 4),
             thread_name_prefix="eval_worker"
         )
         self._metrics_lock = Lock()
         self._detailed_verdicts = []  # Для хранения детализированных результатов
+
+    async def predict_async(self, examples: List[Dict], use_case: str = "academic_research") -> List[float]:
+        """Асинхронный метод для пакетного предсказания метрик с этическими проверками"""
         
-    async def predict_async(self, examples: List[Dict]) -> List[float]:
-        """Асинхронный метод для пакетного предсказания метрик"""
+        # 1. Этическая проверка сценария использования
+        self.ethical_guardrails.validate_use_case(use_case)
+        
+        # 2. Проверка содержания данных
+        for example in examples:
+            self.ethical_guardrails.validate_data_content(example.get('instruction', ''))
+            self.ethical_guardrails.validate_data_content(example.get('generated', ''))
+        
+        # 3. Логирование аудита
+        config_hash = hashlib.md5(json.dumps(config).encode()).hexdigest()
+        self.audit_logger.log_evaluation(config_hash, len(examples), use_case)
+        
+        # 4. Проверка на аномальное использование
+        usage_pattern = self._analyze_usage_pattern(examples)
+        if self.safety_mechanisms.detect_anomalous_usage(usage_pattern):
+            self.safety_mechanisms.emergency_shutdown(
+                "anomalous_usage_pattern", 
+                "Suspicious usage frequency or volume detected"
+            )
+        
+        # Остальная логика оценки...
+        return await self._original_predict_async(examples)
+
+    async def _original_predict_async(self, examples: List[Dict]) -> List[float]:
+        """Оригинальная логика асинхронного предсказания"""
         self._validate_input_examples(examples)
-        
+
         with self._metrics_lock:
             self.metrics.total_examples = len(examples)
             self._detailed_verdicts = []  # Сбрасываем предыдущие результаты
-        
+
         start_time = time.time()
-        
+
         try:
             # Обработка батчами через BatchProcessor
             results = await self.batch_processor.process_batches_async(
                 examples, 
                 self._process_batch_async
             )
-            
+
             # Обновление метрик производительности
             with self._metrics_lock:
                 self.performance_stats.total_processing_time = time.time() - start_time
                 self.performance_stats.examples_processed = len(examples)
-            
+
             # Расчет академических метрик если есть человеческие оценки
             if config.get('academic_metrics', True):
                 human_scores = [ex.get('human_score') for ex in examples if ex.get('human_score') is not None]
@@ -1186,21 +1391,32 @@ class FoundationEvaluationSystem:
                     self.comprehensive_metrics = self.academic_metrics.compute_comprehensive_metrics(
                         results, human_scores, self._detailed_verdicts
                     )
-            
+
             self.logger.info(f"Асинхронно обработано {self.metrics.successful_processing}/{self.metrics.total_examples} примеров")
             self.logger.info(f"Среднее время обработки: {self.performance_stats.avg_processing_time:.3f}с")
-            
+
             return results
-            
+
         except Exception as e:
             self.logger.error(f"Критическая ошибка при обработке: {e}")
             raise EvaluationError(f"Ошибка обработки примеров: {e}")
-    
+
+    def _analyze_usage_pattern(self, examples: List[Dict]) -> Dict[str, Any]:
+        """Анализирует паттерн использования для обнаружения аномалий"""
+        total_text_length = sum(len(str(ex.get('instruction', '')) + len(str(ex.get('generated', ''))) for ex in examples)
+        data_volume_mb = total_text_length / (1024 * 1024)  # Примерный объем в MB
+        
+        return {
+            'evaluations_per_hour': len(examples),  # В реальности нужно отслеживать временные метки
+            'data_volume_mb': data_volume_mb,
+            'examples_count': len(examples)
+        }
+
     async def _process_batch_async(self, examples: List[Example]) -> List[float]:
         """Асинхронная обработка батча примеров"""
         tasks = [self._process_single_example_async(example) for example in examples]
         results = await asyncio.gather(*tasks, return_exceptions=True)
-        
+
         # Обработка результатов
         processed_results = []
         for result in results:
@@ -1211,30 +1427,30 @@ class FoundationEvaluationSystem:
                     self.metrics.error_count += 1
             else:
                 processed_results.append(result)
-        
+
         return processed_results
-    
+
     async def _process_single_example_async(self, example: Example) -> float:
         """Асинхронная обработка одного примера"""
         try:
             start_time = time.time()
-            
+
             # 1. Извлекаем критерии и контекст
             criteria_start = time.time()
             criteria = self._extract_criteria(example)
             task_type = self._detect_task_type(example)
             with self._metrics_lock:
                 self.performance_stats.criteria_extraction_time += time.time() - criteria_start
-            
+
             # 2. Синтезируем критерии оценки
             criteria_config = self.synthesizer.create_criteria(criteria, task_type)
-            
+
             # 3. Асинхронная параллельная оценка
             evaluation_start = time.time()
             raw_verdicts = await self.evaluator.evaluate_criteria_async(criteria_config, example)
             with self._metrics_lock:
                 self.performance_stats.criteria_evaluation_time += time.time() - evaluation_start
-            
+
             # 4. Расчет адаптивных весов
             weight_calc_start = time.time()
             weights = self.weight_manager.calculate_weights(
@@ -1242,19 +1458,19 @@ class FoundationEvaluationSystem:
             )
             with self._metrics_lock:
                 self.performance_stats.weight_calculation_time += time.time() - weight_calc_start
-            
+
             # 5. Применяем веса и корректируем по уверенности
             weighted_verdicts = self._apply_weights_and_confidence(raw_verdicts, weights)
-            
+
             # 6. Валидация и синтез финальной оценки
             validation_start = time.time()
             final_raw_score = self.validator.synthesize_verdicts(weighted_verdicts, example)
             with self._metrics_lock:
                 self.performance_stats.validation_time += time.time() - validation_start
-            
+
             # 7. Конвертация в метрику по формуле конкурса
             metric = self._convert_to_metric(final_raw_score, example, task_type)
-            
+
             # 8. Сохраняем детализированные результаты для академических метрик
             detailed_verdict = {
                 'final_score': metric,
@@ -1262,13 +1478,13 @@ class FoundationEvaluationSystem:
                 'reasoning': ' | '.join([v.get('reasoning', '') for v in weighted_verdicts.values()]),
                 **weighted_verdicts
             }
-            
+
             with self._metrics_lock:
                 self.metrics.successful_processing += 1
                 self._detailed_verdicts.append(detailed_verdict)
-            
+
             return round(metric, 4)
-            
+
         except (ValueError, TypeError, KeyError) as e:
             self.logger.error(f"Ошибка обработки примера: {e}")
             with self._metrics_lock:
@@ -1279,47 +1495,47 @@ class FoundationEvaluationSystem:
             with self._metrics_lock:
                 self.metrics.error_count += 1
             return ERROR_FALLBACK_SCORE
-    
+
     def _calculate_confidence_aggregate(self, verdicts: Dict[str, EvaluationVerdict]) -> float:
         """Агрегирует уверенность из всех критериев"""
         confidences = [v.get('confidence', DEFAULT_CONFIDENCE) for v in verdicts.values()]
         return np.mean(confidences) if confidences else DEFAULT_CONFIDENCE
-    
+
     def _validate_input_examples(self, examples: List[Dict]):
         """Валидирует входные примеры"""
         if not examples:
             raise ValidationError("Список примеров не может быть пустым")
-        
+
         required_fields = ['instruction', 'generated', 'criterion']
         for i, example in enumerate(examples):
             for field in required_fields:
                 if field not in example:
                     raise ValidationError(f"Пример {i} отсутствует обязательное поле: {field}")
-            
+
             # Проверка длины текста
             for text_field in ['instruction', 'generated']:
                 text = example.get(text_field, '')
                 if len(text) > MAX_TEXT_LENGTH:
                     raise ValidationError(f"Поле {text_field} в примере {i} превышает максимальную длину")
-    
-    def predict(self, examples: List[Dict]) -> List[float]:
+
+    def predict(self, examples: List[Dict], use_case: str = "academic_research") -> List[float]:
         """Синхронная версия для обратной совместимости"""
         try:
-            return asyncio.run(self.predict_async(examples))
+            return asyncio.run(self.predict_async(examples, use_case))
         except RuntimeError:
             # Если уже запущен event loop
             loop = asyncio.get_event_loop()
-            return loop.run_until_complete(self.predict_async(examples))
-    
+            return loop.run_until_complete(self.predict_async(examples, use_case))
+
     def get_detailed_verdicts(self) -> List[Dict]:
         """Возвращает детализированные вердикты для академического анализа"""
         with self._metrics_lock:
             return self._detailed_verdicts.copy()
-    
+
     def get_academic_report(self) -> Dict[str, Any]:
         """Возвращает полный академический отчет"""
         performance_report = self.get_performance_report()
-        
+
         return {
             'performance_metrics': performance_report,
             'academic_metrics': self.comprehensive_metrics.to_dict(),
@@ -1329,7 +1545,7 @@ class FoundationEvaluationSystem:
                 'academic_composite_score': self._calculate_academic_composite_score()
             }
         }
-    
+
     def _calculate_academic_composite_score(self) -> float:
         """Вычисляет композитный академический score"""
         weights = {
@@ -1341,10 +1557,10 @@ class FoundationEvaluationSystem:
             'exact_match_rate': 0.1,
             'evaluation_consistency': 0.1
         }
-        
+
         metrics = self.comprehensive_metrics
         composite = 0.0
-        
+
         # Нормализуем и взвешиваем метрики
         composite += weights['spearman_correlation'] * metrics.spearman_correlation
         composite += weights['overall_quality'] * metrics.overall_quality
@@ -1353,14 +1569,14 @@ class FoundationEvaluationSystem:
         composite += weights['system_reliability'] * metrics.system_reliability
         composite += weights['exact_match_rate'] * metrics.exact_match_rate
         composite += weights['evaluation_consistency'] * metrics.evaluation_consistency
-        
+
         return composite
 
     def _extract_criteria(self, example: Example) -> List[str]:
         """Извлекает критерии оценки из примера"""
         criterion = example.get('criterion', '').lower()
         scale = example.get('scale', '').lower()
-        
+
         criteria = []
         if "правильность" in criterion and "формат" in criterion:
             criteria.extend(["правильность", "формат"])
@@ -1382,15 +1598,15 @@ class FoundationEvaluationSystem:
                 criteria.append("правильность")
             if not criteria:
                 criteria.append("общее_качество")
-        
+
         return criteria
-    
+
     def _detect_task_type(self, example: Example) -> str:
         """Определяет тип задачи"""
         instruction = example.get('instruction', '').lower()
         generated = example.get('generated', '').lower()
         input_text = example.get('input', '').lower()
-        
+
         # Проверка на статические бенчмарки (множественный выбор)
         if any(word in instruction for word in ['выбери', 'вариант', 'a)', 'b)', 'c)', 'd)', 'правильный ответ']):
             return TaskType.STATIC_BENCHMARK.value
@@ -1402,27 +1618,27 @@ class FoundationEvaluationSystem:
         # Генеративные задачи
         else:
             return TaskType.GENERATIVE.value
-    
+
     def _apply_weights_and_confidence(self, verdicts: Dict[str, EvaluationVerdict], weights: Dict[str, float]) -> Dict[str, EvaluationVerdict]:
         """Применяет веса и корректирует по уверенности оценок"""
         adjusted_verdicts = {}
-        
+
         for criterion_name, verdict in verdicts.items():
             base_weight = weights.get(criterion_name, 0.5)
             confidence = verdict.get('confidence', DEFAULT_CONFIDENCE)
-            
+
             # Корректировка веса на основе уверенности
             adjusted_weight = base_weight * (0.5 + 0.5 * confidence)
             verdict['weight'] = adjusted_weight
             adjusted_verdicts[criterion_name] = verdict
-        
+
         return adjusted_verdicts
-    
+
     def _convert_to_metric(self, raw_score: float, example: Example, task_type: str) -> float:
         """Конвертирует сырую оценку в метрику по формуле M = 2 - (raw_score / max_score)"""
         if raw_score == -1:
             return ERROR_FALLBACK_SCORE
-        
+
         # Определяем максимальный балл для типа задачи
         if task_type == TaskType.STATIC_BENCHMARK.value:
             max_score = 3
@@ -1430,15 +1646,15 @@ class FoundationEvaluationSystem:
             max_score = 2
         else:  # generative
             max_score = 2
-        
+
         metric = 2 - (raw_score / max_score)
         return max(0.0, min(metric, 2.0))  # Ограничиваем диапазон
-    
+
     def get_performance_report(self) -> Dict[str, Any]:
         """Возвращает отчет о производительности"""
         with self._metrics_lock:
             success_rate = self.metrics.successful_processing / max(self.metrics.total_examples, 1)
-            
+
             return {
                 'processing_metrics': self.performance_stats.to_dict(),
                 'success_rate': success_rate,
@@ -1447,18 +1663,18 @@ class FoundationEvaluationSystem:
                 'successful_processing': self.metrics.successful_processing,
                 'model_timeouts': self.metrics.model_timeouts
             }
-    
+
     def clear_state(self):
         """Очищает состояние системы"""
         with self._metrics_lock:
             self.metrics = ProcessingMetrics()
             self.performance_stats = PerformanceStats()
             self._detailed_verdicts = []
-        
+
         self.weight_manager.clear_cache()
         self.synthesizer.clear_cache()
         self.evaluator.clear_cache()
-    
+
     def __del__(self):
         """Деструктор для очистки ресурсов"""
         if hasattr(self, '_executor'):
@@ -1487,7 +1703,7 @@ def create_config_file():
         'max_workers': 4,
         'cache_size': 1000,
         'academic_metrics': True,
-        
+
         'task_weights': {
             'static_benchmark': {
                 'правильность': 0.7,
@@ -1505,9 +1721,36 @@ def create_config_file():
                 'речевые_ошибки': 0.3,
                 'общее_качество': 0.2
             }
+        },
+        
+        'ethical_guardrails': {
+            'enabled': True,
+            'forbidden_use_cases': [
+                'mass_surveillance',
+                'behavior_manipulation',
+                'censorship_systems', 
+                'social_scoring',
+                'predictive_policing',
+                'personality_assessment'
+            ],
+            'data_restrictions': {
+                'prohibited_data_types': ['biometric', 'medical', 'financial', 'political'],
+                'max_input_size_mb': 10,
+                'require_content_screening': True
+            },
+            'usage_limits': {
+                'max_evaluations_per_hour': 1000,
+                'max_concurrent_sessions': 10,
+                'evaluation_timeout_seconds': 300
+            },
+            'transparency': {
+                'audit_logging': True,
+                'public_audit_access': True,
+                'require_use_case_declaration': True
+            }
         }
     }
-    
+
     with open(CONFIG_PATH, 'w', encoding='utf-8') as f:
         yaml.dump(config_example, f, allow_unicode=True, default_flow_style=False)
 
@@ -1515,15 +1758,15 @@ def create_config_file():
 async def main():
     """Демонстрация работы системы с академическими метриками"""
     setup_logging()
-    
+
     # Создание конфигурационного файла если его нет
     if not CONFIG_PATH.exists():
         create_config_file()
         print("Создан конфигурационный файл config.yaml")
-    
+
     # Инициализация системы с fallback стратегией
     evaluation_system = FoundationEvaluationSystem(fallback_strategy=ModelFallbackStrategy.MOCK)
-    
+
     # Тестовые примеры с человеческими оценками для корреляции
     test_examples = [
         {
@@ -1551,22 +1794,22 @@ async def main():
             "human_score": 1.5
         }
     ] * 3  # Умножаем для статистической значимости
-    
+
     print("Запуск асинхронной обработки с академическими метриками...")
-    
-    # Асинхронная обработка
+
+    # Асинхронная обработка с этическими проверками
     start_time = time.time()
-    results = await evaluation_system.predict_async(test_examples)
+    results = await evaluation_system.predict_async(test_examples, "academic_research")
     processing_time = time.time() - start_time
-    
+
     print(f"Результаты оценки: {results}")
     print(f"Время обработки: {processing_time:.3f}с")
-    
+
     # Полный академический отчет
     academic_report = evaluation_system.get_academic_report()
     print("\n=== ПОЛНЫЙ АКАДЕМИЧЕСКИЙ ОТЧЕТ ===")
     print(json.dumps(academic_report, indent=2, ensure_ascii=False, default=str))
-    
+
     # Ключевые метрики для быстрого анализа
     comp_metrics = evaluation_system.comprehensive_metrics
     print(f"\n=== КЛЮЧЕВЫЕ МЕТРИКИ ===")
@@ -1574,7 +1817,7 @@ async def main():
     print(f"Согласованность с человеком (Spearman): {comp_metrics.spearman_correlation:.3f}")
     print(f"Средняя абсолютная ошибка: {comp_metrics.mean_absolute_error:.3f}")
     print(f"Качество системы оценки: {comp_metrics.evaluation_system_quality:.3f}")
-    
+
     # Очистка состояния
     evaluation_system.clear_state()
 
