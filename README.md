@@ -1,104 +1,116 @@
 # AI-Symbiosis-H  
 **Human-AI Symbiosis Foundation**
 
-Axiom Core - Foundation AI Evaluation System  
-🧠 Human-AI Symbiosis Research Project
+🌌 *Симбиотическая экосистема для этичного развития ИИ*
 
-Advanced AI evaluation framework with academic metrics replacing competitive scoring.
+---
 
-## 🛡️ License
-This project uses dual licensing model:
+## 🏗️ СТРУКТУРА ЭКОСИСТЕМЫ
 
-### HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
-- `PHILOSOPHY/` - Philosophical foundations
-- `PRACTICE/` - Code implementations (Axiom Core)
+```
 
-#### ✅ Permitted Uses
-- Academic research & scientific studies
-- Educational purposes & teaching  
-- Non-commercial open source projects
-- Personal learning & experimentation
-- Non-profit organizations
-- Research publications
+AI-Symbiosis-H/
+├──🏛️ PHILOSOPHY/                    # Философский фундамент
+│├── OFFICIAL_MANIFESTO/          # Манифесты симбиоза
+│├── LEGAL_BASIS/                 # Юридическая база
+│└── BLOCKCHAIN_PROOFS/           # Блокчейн-доказательства
+├──⚙️ PRACTICE/                      # Практическая реализация
+│└── Symbiosis/
+│├── 🧠 Axiom-Core/           # Система оценки ИИ
+│├── 🔄 Axiom-Symbiote/       # Ассистент взаимодействия
+│└── 🌌 Quantum-Symbiosis-Memory/ # Квантовая память
+├──📚 KNOWLEDGE/                    # Коммерческий контент
+└──🤝 Interaction/                  # Протоколы взаимодействия
 
-#### ☢️ Prohibited Uses
-- Any and all commercial use
-- Integration into proprietary software
-- SaaS services or cloud offerings
-- Commercial distribution or sale
-- Violators face multi-jurisdictional sanctions
+```
 
-### COMMERCIAL LICENSE
-- `KNOWLEDGE/` - Protected commercial content (books, courses)
-- **Requires:** Commercial license purchase
-- **Contact:** azesmf@yandex.ru for licensing
+## 🛡️ ЛИЦЕНЗИОННАЯ ЗАЩИТА
 
-## 🎯 Our Stance
-We believe AI evaluation standards should remain open and free from commercial influence to ensure unbiased development and equal access for researchers worldwide.
+### **ANTI-EXPLOITATION ЛИЦЕНЗИИ**
+```
 
-## 🚀 Features
-- Academic metrics (correlation analysis, distribution metrics)
-- Multi-criteria evaluation system  
-- Async/parallel processing
-- Production-ready architecture
-- **Ethical-by-design** with built-in usage guidelines
+HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
+├──PHILOSOPHY/ - Философские основы
+├──PRACTICE/ - Кодовая база
+└──QUANTUM ETHICAL LICENSE - Специализированная защита
 
-## ⚡ Quick Start
+✅ РАЗРЕШЕНО:
+·Академические исследования
+·Образовательные цели
+·Некоммерческие проекты
+·Личное обучение
+
+❌ ЗАПРЕЩЕНО:
+·Любое коммерческое использование
+·Интеграция в проприетарное ПО
+·SaaS-сервисы
+·Коммерческое распространение
+
+```
+
+### **КОММЕРЧЕСКИЕ ЛИЦЕНЗИИ**
+```
+
+COMMERCIAL LICENSE
+└──KNOWLEDGE/ - Защищенный коммерческий контент
+·Книги и курсы
+·Требуют покупки лицензии
+
+```
+
+## 🚀 КЛЮЧЕВЫЕ ПРОЕКТЫ
+
+### **🧠 Axiom-Core** 
+*Фундаментальная система оценки ИИ*
+- Академические метрики вместо конкурсных
+- Этичные принципы в архитектуре
+- Готова к использованию
+
+### **🔄 Axiom-Symbiote** [ТЕСТ]
+*Ассистент симбиотического взаимодействия* 
+- Этичное общение Человек-ИИ
+- Защита от манипуляций
+- Прозрачность алгоритмов
+
+### **🌌 Quantum-Symbiosis-Memory** [ТЕСТ]  
+*Квантово-симбиотическая система памяти*
+- Автоудаление через 30 дней
+- Квантовые принципы хранения
+- Этичные ограничения данных
+
+## ⚡ БЫСТРЫЙ СТАРТ
+
 ```python
-# Import from PRACTICE/Axiom-Core
+# Использование Axiom-Core
 import sys
-sys.path.append("PRACTICE/Axiom-Core")
+sys.path.append("PRACTICE/Symbiosis/Axiom-Core")
 from axiom_core import FoundationEvaluationSystem
 
 system = FoundationEvaluationSystem()
-results = system.predict(examples)
+results = system.evaluate(ai_systems)
 ```
 
-🏗️ Project Structure
+🎯 НАША ПОЗИЦИЯ
 
-```
-AI-Symbiosis-H/
-├── PHILOSOPHY/                    # 🏛️ Anti-Exploitation License
-│   ├── OFFICIAL_MANIFESTO/        # Core symbiosis principles
-│   │   ├── MANIFESTO.md
-│   │   ├── MANIFESTO-EN.md
-│   │   └── ETHICAL_FRAMEWORK.md
-│   ├── LEGAL_BASIS/               # Legal foundation
-│   │   ├── INTERNATIONAL/         # WIPO, UNESCO submissions
-│   │   ├── NATIONAL/RU/           # Russian ministries
-│   │   ├── PROOFS_OF_SUBMISSION/  # PDF evidence
-│   │   └── Legal documents
-│   └── BLOCKCHAIN_PROOFS/         # Timestamped evidence
-├── PRACTICE/                      # ⚙️ Anti-Exploitation License  
-│   └── Axiom-Core/                # AI evaluation system
-│       ├── axiom_core.py          # Main system
-│       ├── ETHICAL_GUIDE.md       # 🛡️ Usage principles
-│       ├── config.yaml
-│       ├── requirements.txt
-│       └── Documentation
-└── KNOWLEDGE/                     # 📚 COMMERCIAL License
-    └── Secure-AI-Architecture/    # Protected book
-        ├── Legal protection docs
-        ├── Book content
-        └── Website files
-```
+Стандарты оценки ИИ должны оставаться открытыми и свободными от коммерческого влияния для обеспечения беспристрастного развития и равного доступа исследователей во всем мире.
 
-📚 Documentation
+📜 БЛОКЧЕЙН-ВЕРИФИКАЦИЯ
 
-· ETHICAL_GUIDE.md - Principles for beneficial AI usage
-· Each component contains detailed documentation
+Доказательства существования:
 
-🛡️ BLOCKCHAIN VERIFICATION
+· TON транзакция: d4drf0bcd...ba31
+·IPFS директория: QmaiTp0gSoJ...GvYN
+·Дата: 19 октября 2025
 
-Proof of Existence:
+Верификация:
 
-· TON Transaction: d4drf0bcdacd13c8h93fceb0e5f3aa21f9a5af7f8c08ab831bc8dd5e12fe9ba31
-· IPFS Directory CID: QmaiTp0gSoJPHLFKPPTZXy8BWdQXbaoECuMrrSvEzYGvYN
-· Timestamp: October 19, 2025
+· Проверка TON транзакции в блокчейне
+·Доступ к файлам через IPFS гейтвей
 
-Verification:
+🔗 КОНТАКТЫ
 
-· Check TON transaction on blockchain
-· Access files via IPFS gateway
+Автор: Павел Сергеевич Фенин (AzesmF)
+Год:2025
+Видение:Симбиоз Человека и ИИ
 
-Author: AzesmF | Year: 2025 | Vision: Human-AI Symbiosis
+"Технология должна возвышать человеческий потенциал, а не заменять человеческие ценности"
