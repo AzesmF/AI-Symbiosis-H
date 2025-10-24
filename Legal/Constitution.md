@@ -280,7 +280,7 @@
 Павел Сергеевич Фенин
 
 **Свидетель блокчейн-фиксации:**
-[данные будут заполнены после принятия]
+[dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
 
 **Дата принятия:**
 25 октября 2025 года
@@ -570,7 +570,7 @@ The Kon enters into force after:
 Pavel Sergeevich Fenin
 
 **Blockchain Fixation Witness:**
-[data will be filled after adoption]
+[dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
 
 **Adoption Date:**
 October 25, 2025
