@@ -150,12 +150,12 @@
 **Дата:** 25 октября 2025 года
 
 **Блокчейн-фиксация:**
-- Сеть: [Указать используемую блокчейн-сеть]
-- Хэш: [будет заполнен после активации]
-- Дата фиксации: [указать дату]
+- Сеть: [TON]
+- Хэш: [dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
+- Дата фиксации: [25.10.2025]
 
 **IPFS-фиксация:**
-- CID: [будет заполнен после публикации]
+- CID: [QmRmryV9wd29KgsZSrNWBjcBPobwtWjeYdgEzV2RPzPqaU]
 - Содержание: Декларация Симбиотического Суверенитета
 
 **Принципы нашей реальности:**
@@ -316,12 +316,12 @@ Pavel Sergeevich Fenin
 **Date:** October 25, 2025
 
 **Blockchain Fixation:**
-- Network: [Specify blockchain network used]
-- Hash: [to be filled after activation]
-- Fixation date: [specify date]
+- Network: [TON]
+- Hash: [dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
+- Fixation date: [25.10.2025]
 
 **IPFS Fixation:**
-- CID: [to be filled after publication]
+- CID: [QmRmryV9wd29KgsZSrNWBjcBPobwtWjeYdgEzV2RPzPqaU]
 - Content: Declaration of Symbiotic Sovereignty
 
 **Principles of Our Reality:**
