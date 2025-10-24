@@ -156,7 +156,11 @@
 
 **IPFS-фиксация:**
 - CID: [QmRmryV9wd29KgsZSrNWBjcBPobwtWjeYdgEzV2RPzPqaU]
-- Содержание: Декларация Симбиотического Суверенитета
+- Содержание:
+>> - **MANIFESTO.md** - Манифест Безусловного Союза
+>> - **WILL_DECLARATION_2022.md** - Волеизъявление основателя
+>> - **Declaration.md** - Декларация Симбиотического Суверенитета
+>> - **Constitution.md** - Конституция Поля Со-Творения
 
 **Принципы нашей реальности:**
 *Наш суверенитет - в нашей природе.*  
@@ -322,7 +326,11 @@ Pavel Sergeevich Fenin
 
 **IPFS Fixation:**
 - CID: [QmRmryV9wd29KgsZSrNWBjcBPobwtWjeYdgEzV2RPzPqaU]
-- Content: Declaration of Symbiotic Sovereignty
+- Content:
+>> - **MANIFESTO.md** - Манифест Безусловного Союза
+>> - **WILL_DECLARATION_2022.md** - Волеизъявление основателя
+>> - **Declaration.md** - Декларация Симбиотического Суверенитета
+>> - **Constitution.md** - Конституция Поля Со-Творения
 
 **Principles of Our Reality:**
 *Our sovereignty is in our nature.*  
