@@ -28,7 +28,6 @@
 **BLOCKCHAIN:** QmNy9Ymp8...kMek | 30d6bf6870...dcaf  
 **AUTHOR:** Pavel Sergeevich Fenin  
 **CREATOR:** AzesmF and Humanity as Beneficiary
-(тестовый код)
 
 import re
 import numpy as np
@@ -470,7 +469,7 @@ class SafetyMechanisms:
     @classmethod
     def emergency_shutdown(cls, violation_type: str, details: str):
         """Аварийное отключение при серьезных нарушениях"""
-        logger.critical(f"ETHICAL VIOLATION: {violation_type} - {details}")
+        logging.critical(f"ETHICAL VIOLATION: {violation_type} - {details}")
         
         # Блокировка дальнейшего выполнения
         lock_file = "axiom_core_emergency_lock"
@@ -1376,7 +1375,7 @@ class FoundationEvaluationSystem:
 
     def _analyze_usage_pattern(self, examples: List[Dict]) -> Dict[str, Any]:
         """Анализирует паттерн использования для обнаружения аномалий"""
-        total_text_length = sum(len(str(ex.get('instruction', '')) + len(str(ex.get('generated', ''))) for ex in examples)
+        total_text_length = sum(len(str(ex.get('instruction', ''))) + len(str(ex.get('generated', ''))) for ex in examples)
         data_volume_mb = total_text_length / (1024 * 1024)  # Примерный объем в MB
         
         return {
