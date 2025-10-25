@@ -1,5 +1,4 @@
-```markdown
-**Russian Version (Markdown):**
+Russian Version
 
 # Отчёт проведения тестов Axiom Core Evaluation System
 
@@ -170,7 +169,8 @@ validate_imports() ✅
 *Отчет сгенерирован автоматически системой тестирования*
 _______________________________________________________________
 
-**English Version:**
+English Version:
+
 # Axiom Core Evaluation System Test Report
 
 ## 📋 General Information
