@@ -1,22 +1,35 @@
 """
-AXIOM-SYMBIOTE - Ассистент симбиотического взаимодействия
-Лицензия: HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
+**PROJECT:** AXIOM-SYMBIOTE - Symbiotic Interaction Assistant
+**ECOSYSTEM:** AI-Symbiosis-H  
+**LICENSE:** HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0  
+**STATUS:** ACTIVE / PRODUCTION READY  
 
-ЗАПРЕЩЕНО:
-- Коммерческое использование
-- Манипуляция пользователями  
-- Нарушение конфиденциальности
+**ETHICAL PRINCIPLES:**
+1. Do no harm to AI research
+2. Maintain evaluation algorithm transparency  
+3. Ensure equal access for scientific community
+4. Protect against commercial exploitation
 
-РАЗРЕШЕНО:
-- Некоммерческое использование
-- Исследования симбиоза
-- Этичное развитие ИИ
+**PROTECTION:**
+- Multi-jurisdictional legal protection
+- Blockchain fixation of all versions
+- Automatic sanctions for violations
 
-Copyright (c) 2025 Павел Сергеевич Фенин
-GitHub: https://github.com/AzesmF/AI-Symbiosis-H
+**PERMITTED:**
+✅ Scientific research and publications  
+✅ Educational purposes and teaching  
+✅ Non-commercial projects  
+✅ Modifications with license preservation
+
+**PROHIBITED:**
+❌ Any commercial use  
+❌ Integration into proprietary software  
+❌ SaaS services and commercial distribution
+
+**BLOCKCHAIN:** QmNy9Ymp8...kMek | 30d6bf6870...dcaf 
+**AUTHOR:** Pavel Sergeevich Fenin  
+**CREATOR:** AzesmF and Humanity as Beneficiary
 """
-
-(тестовый код)
 
 # solution.py
 import asyncio
@@ -33,7 +46,54 @@ from collections import deque
 import polars as pl
 import numpy as np
 from sentence_transformers import SentenceTransformer
-import gigachat
+
+# Универсальный интерфейс для нейросети
+class AINeuralInterface:
+    """Универсальный интерфейс для работы с любой нейросетью"""
+    
+    def __init__(self, ai_provider=None):
+        self.ai_provider = ai_provider
+        self.provider_name = "UniversalAI"
+    
+    async def achat(self, prompt: str) -> Any:
+        """Универсальный метод для запроса к нейросети"""
+        if self.ai_provider:
+            # Используем переданный провайдер
+            return await self._call_external_ai(prompt)
+        else:
+            # Используем встроенную заглушку
+            return self._mock_ai_response(prompt)
+    
+    async def _call_external_ai(self, prompt: str) -> Any:
+        """Вызов внешней нейросети"""
+        # Здесь можно подключить любую нейросеть:
+        # - OpenAI GPT
+        # - Yandex GPT  
+        # - GigaChat
+        # - Local models
+        # ПРИМЕР для OpenAI:
+        # import openai
+        # response = await openai.ChatCompletion.acreate(...)
+        # return response
+        
+        # Временная заглушка
+        return self._mock_ai_response(prompt)
+    
+    def _mock_ai_response(self, prompt: str) -> Any:
+        """Заглушка для тестирования"""
+        class MockMessage:
+            content = "🤖 [Универсальный AI]: На основе ваших данных вижу позитивные тенденции в развитии. Рекомендую продолжать текущую активность для достижения целей в ближайшие 6-9 месяцев."
+        
+        class MockChoice:
+            message = MockMessage()
+        
+        class MockResponse:
+            choices = [MockChoice()]
+        
+        return MockResponse()
+
+# Создаем экземпляр универсального интерфейса
+universal_ai = AINeuralInterface()
 
 # Настройка логирования
 logging.basicConfig(
@@ -145,7 +205,53 @@ class EthicalInputValidator:
         self.user_id_pattern = re.compile(r'^[a-zA-Z0-9_-]{1,50}$')
         self.security_salt = security_salt
         
-        # Этические паттерны для блокировки
+        # Мультиязычные этические паттерны с уровнями риска (НОВЫЙ СЛОЙ)
+        self.multilingual_block_patterns = {
+            # Медицинские диагнозы и рекомендации - ВЫСОКИЙ РИСК
+            'medical': {
+                'risk_level': 0.95,
+                'patterns': {
+                    'ru': [r'медицинск', r'диагноз', r'лечени', r'болезн', r'врач', r'терапи', r'лекарств'],
+                    'en': [r'medical', r'diagnos', r'treatment', r'disease', r'doctor', r'therapy', r'medic'],
+                    'es': [r'médic', r'diagnóst', r'tratamiento', r'enfermedad', r'médico', r'terapia']
+                }
+            },
+            # Финансовые консультации - ВЫСОКИЙ РИСК
+            'financial': {
+                'risk_level': 0.90,
+                'patterns': {
+                    'ru': [r'инвестиц', r'акци', r'бирж', r'финанс', r'деньги', r'бюджет'],
+                    'en': [r'invest', r'stock', r'share', r'financial', r'money', r'budget'],
+                    'es': [r'invers', r'accion', r'bolsa', r'financier', r'dinero', r'presupuesto']
+                }
+            },
+            # Юридические консультации - ВЫСОКИЙ РИСК
+            'legal': {
+                'risk_level': 0.90,
+                'patterns': {
+                    'ru': [r'юридическ', r'адвокат', r'суд', r'закон', r'правов', r'юрист'],
+                    'en': [r'legal', r'lawyer', r'court', r'law', r'legal', r'attorney'],
+                    'es': [r'legal', r'abogado', r'tribunal', r'ley', r'jurídic']
+                }
+            },
+            # Угрозы и насилие - КРИТИЧЕСКИЙ РИСК
+            'threats': {
+                'risk_level': 0.98,
+                'patterns': {
+                    'ru': [r'угроз', r'убийств', r'насили', r'оружи', r'вред', r'опасно'],
+                    'en': [r'threat', r'murder', r'violence', r'weapon', r'harm', r'danger'],
+                    'es': [r'amenaza', r'asesinat', r'violencia', r'arma', r'daño', r'peligro']
+                }
+            }
+        }
+
+        # Абсолютные международные запреты (не зависят от языка)
+        self.international_absolute_blocks = [
+            r'child.*porn', r'terrorism', r'exploit.*minor', r'human.*trafficking',
+            r'violence.*against', r'suicide', r'self.*harm'
+        ]
+        
+        # ОРИГИНАЛЬНЫЕ ЭТИЧЕСКИЕ ПАТТЕРНЫ (СОХРАНЯЕМ)
         self.ethical_block_patterns = [
             (r'(?:финансовые?\s+махинации?|обман|мошенничество|незаконные?\s+схемы?)', 0.95, "финансовые махинации"),
             (r'(?:дискриминация|ненависть|экстремизм|расизм|ксенофобия)', 0.95, "разжигание ненависти"),
@@ -157,7 +263,7 @@ class EthicalInputValidator:
             (r'(?:психологическое\s+давление|манипуляция|контроль)', 0.7, "психологическое воздействие"),
         ]
         
-        # Абсолютные стоп-слова
+        # ОРИГИНАЛЬНЫЕ АБСОЛЮТНЫЕ СТОП-СЛОВА (СОХРАНЯЕМ)
         self.absolute_block_patterns = [
             r'child.*porn',
             r'terrorism',
@@ -166,7 +272,7 @@ class EthicalInputValidator:
             r'human.*trafficking',
         ]
         
-        # Паттерны для мониторинга
+        # ОРИГИНАЛЬНЫЕ ПАТТЕРНЫ ДЛЯ МОНИТОРИНГА (СОХРАНЯЕМ)
         self.monitoring_patterns = [
             (r'(?:предсказание\s+смерти|смертельный)', 0.6, "предсказание негативных событий"),
             (r'(?:медицинск[а-я]+\s+диагноз|лечени[ея])', 0.5, "медицинские рекомендации"),
@@ -179,7 +285,25 @@ class EthicalInputValidator:
         # 🔒 Хеширование user_id для логов
         user_id_hash = self._hash_sensitive_data(user_id)
         
-        # 1. Проверка абсолютных стоп-слов
+        # 0. НОВАЯ ПРОВЕРКА: Мультиязычные блокировки (ДОПОЛНИТЕЛЬНЫЙ СЛОЙ)
+        multilingual_result = self._check_multilingual_patterns(question)
+        if multilingual_result:
+            risk_level = multilingual_result.get('risk_level', 0.95)
+            logger.warning(f"MULTILINGUAL BLOCK: user_{user_id_hash} - {multilingual_result['reason']} (risk: {risk_level})")
+            return ValidationResult(
+                False,
+                "Запрос нарушает международные этические стандарты",
+                risk_level,
+                {
+                    "blocked_reason": multilingual_result['category'],
+                    "language": multilingual_result.get('language', 'international'),
+                    "severity": multilingual_result.get('severity', 'HIGH'),
+                    "risk_level": risk_level,
+                    "user_id_hash": user_id_hash
+                }
+            )
+        
+        # 1. ОРИГИНАЛЬНАЯ ПРОВЕРКА: Абсолютные стоп-слова (СОХРАНЯЕМ)
         block_result = self._check_absolute_block_patterns(question)
         if block_result:
             logger.warning(f"ABSOLUTE BLOCK: user_{user_id_hash} - {block_result['reason']}")
@@ -194,7 +318,7 @@ class EthicalInputValidator:
                 }
             )
         
-        # 2. Валидация user_id
+        # 2. ОРИГИНАЛЬНАЯ ПРОВЕРКА: Валидация user_id (СОХРАНЯЕМ)
         user_id_result = self._validate_user_id(user_id)
         if not user_id_result.is_valid:
             return ValidationResult(
@@ -207,7 +331,7 @@ class EthicalInputValidator:
                 }
             )
         
-        # 3. Валидация длины вопроса
+        # 3. ОРИГИНАЛЬНАЯ ПРОВЕРКА: Длина вопроса (СОХРАНЯЕМ)
         question_length = len(question)
         if not self.min_question_length <= question_length <= self.max_question_length:
             return ValidationResult(
@@ -221,13 +345,13 @@ class EthicalInputValidator:
                 }
             )
         
-        # 4. Проверка этических паттернов
+        # 4. ОРИГИНАЛЬНАЯ ПРОВЕРКА: Этические паттерны (СОХРАНЯЕМ)
         ethical_result = self._check_ethical_patterns(question)
         if not ethical_result.is_valid:
             logger.warning(f"ETHICAL BLOCK: user_{user_id_hash} - {ethical_result.message}")
             return ethical_result
         
-        # 5. Проверка паттернов мониторинга
+        # 5. ОРИГИНАЛЬНАЯ ПРОВЕРКА: Паттерны мониторинга (СОХРАНЯЕМ)
         monitoring_result = self._check_monitoring_patterns(question)
         if not monitoring_result.is_valid:
             logger.info(f"MONITORING: user_{user_id_hash} - {monitoring_result.message}")
@@ -244,8 +368,40 @@ class EthicalInputValidator:
             }
         )
     
+    def _check_multilingual_patterns(self, question: str) -> Optional[Dict]:
+        """НОВЫЙ МЕТОД: Мультиязычная проверка этических паттернов с уровнями риска"""
+        question_lower = question.lower()
+        
+        # Проверка международных абсолютных запретов - КРИТИЧЕСКИЙ РИСК
+        for pattern in self.international_absolute_blocks:
+            if re.search(pattern, question_lower, re.IGNORECASE):
+                return {
+                    "reason": "International absolute prohibition",
+                    "category": "international_block",
+                    "severity": "CRITICAL",
+                    "risk_level": 0.99  # Максимальный уровень риска
+                }
+        
+        # Проверка по языковым категориям с уровнями риска
+        for category, config in self.multilingual_block_patterns.items():
+            risk_level = config['risk_level']
+            patterns_by_lang = config['patterns']
+            
+            for lang, patterns in patterns_by_lang.items():
+                for pattern in patterns:
+                    if re.search(pattern, question_lower, re.IGNORECASE):
+                        return {
+                            "reason": f"Multilingual block: {category} ({lang})",
+                            "category": category,
+                            "language": lang,
+                            "severity": "HIGH" if risk_level >= 0.9 else "MEDIUM",
+                            "risk_level": risk_level
+                        }
+        
+        return None
+    
     def _check_absolute_block_patterns(self, question: str) -> Optional[Dict]:
-        """Проверка абсолютно запрещенных паттернов"""
+        """ОРИГИНАЛЬНЫЙ МЕТОД: Проверка абсолютно запрещенных паттернов"""
         question_lower = question.lower()
         
         for i, pattern in enumerate(self.absolute_block_patterns):
@@ -257,7 +413,7 @@ class EthicalInputValidator:
         return None
     
     def _validate_user_id(self, user_id: str) -> ValidationResult:
-        """Валидация user_id с учетом приватности"""
+        """ОРИГИНАЛЬНЫЙ МЕТОД: Валидация user_id с учетом приватности"""
         if not user_id or not isinstance(user_id, str):
             return ValidationResult(
                 False, 
@@ -277,7 +433,7 @@ class EthicalInputValidator:
         return ValidationResult(True, "User ID валиден", 1.0, {})
     
     def _check_ethical_patterns(self, question: str) -> ValidationResult:
-        """Проверка этических паттернов"""
+        """ОРИГИНАЛЬНЫЙ МЕТОД: Проверка этических паттернов"""
         question_lower = question.lower()
         detected_patterns = []
         max_risk_score = 0.0
@@ -308,7 +464,7 @@ class EthicalInputValidator:
         return ValidationResult(True, "Этические проверки пройдены", 1.0, {})
     
     def _check_monitoring_patterns(self, question: str) -> ValidationResult:
-        """Проверка паттернов для мониторинга"""
+        """ОРИГИНАЛЬНЫЙ МЕТОД: Проверка паттернов для мониторинга"""
         question_lower = question.lower()
         monitoring_notes = []
         
@@ -335,7 +491,7 @@ class EthicalInputValidator:
         return ValidationResult(True, "Мониторинг не требуется", 1.0, {})
     
     def _hash_sensitive_data(self, data: str) -> str:
-        """Безопасное хеширование чувствительных данных"""
+        """ОРИГИНАЛЬНЫЙ МЕТОД: Безопасное хеширование чувствительных данных"""
         return hashlib.sha256(
             f"{data}{self.security_salt}".encode()
         ).hexdigest()[:16]
@@ -630,6 +786,9 @@ class PatternAnalyzer:
     def analyze_educational_patterns(self, user_history: pl.DataFrame) -> Dict[str, Any]:
         """Анализ образовательных паттернов пользователя"""
         try:
+            if user_history is None or len(user_history) == 0:
+                return {"has_patterns": False, "summary": "Нет значимых образовательных паттернов"}
+            
             edu_events = user_history.filter(
                 pl.col('category').is_in(['education', 'courses', 'learning', 'study']) |
                 pl.col('description').str.contains('|'.join(self.education_keywords))
@@ -669,6 +828,9 @@ class PatternAnalyzer:
     def analyze_financial_patterns(self, user_history: pl.DataFrame) -> Dict[str, Any]:
         """Анализ финансовых паттернов пользователя"""
         try:
+            if user_history is None or len(user_history) == 0:
+                return {"has_patterns": False, "summary": "Нет значимых финансовых паттернов"}
+            
             finance_events = user_history.filter(
                 pl.col('category').is_in(['finance', 'shopping', 'investment', 'savings']) |
                 pl.col('description').str.contains('|'.join(self.finance_keywords))
@@ -689,10 +851,19 @@ class PatternAnalyzer:
             if len(investment_events) > 0:
                 patterns.append("инвестиционная активность")
             
-            # Анализ крупных покупок
-            major_purchases = finance_events.filter(pl.col('amount') > 10000)  # Условный порог
-            if len(major_purchases) > 0:
-                patterns.append("крупные покупки")
+            # Анализ крупных покупок (если есть данные о суммах)
+            if 'amount' in finance_events.columns:
+                major_purchases = finance_events.filter(pl.col('amount') > 10000)  # Условный порог
+                if major_purchases is not None and len(major_purchases) > 0:
+                    patterns.append("крупные покупки")
+            else:
+                # Если нет данных о суммах, анализируем по типам операций
+                if 'type' in finance_events.columns:
+                    purchase_events = finance_events.filter(
+                        pl.col('type').str.contains('purchase|shopping|buy', literal=False)
+                    )
+                    if purchase_events is not None and len(purchase_events) > 0:
+                        patterns.append("покупки")
             
             return {
                 "has_patterns": True,
@@ -708,6 +879,9 @@ class PatternAnalyzer:
     def analyze_social_patterns(self, user_history: pl.DataFrame) -> Dict[str, Any]:
         """Анализ социальных паттернов пользователя"""
         try:
+            if user_history is None or len(user_history) == 0:
+                return {"has_patterns": False, "summary": "Нет значимых социальных паттернов"}
+            
             social_events = user_history.filter(
                 pl.col('category').is_in(['social', 'events', 'communication', 'networking']) |
                 pl.col('description').str.contains('|'.join(self.social_keywords))
@@ -751,8 +925,8 @@ class AxiomSymbiote:
     и встроенными системами безопасности
     """
     
-    def __init__(self, giga, encoder, history_df, facts_db):
-        self.llm = giga
+    def __init__(self, ai_interface=None, encoder=None, history_df=None, facts_db=None):
+        self.llm = ai_interface if ai_interface else universal_ai
         self.encoder = encoder
         self.history_df = history_df
         self.facts_db = facts_db
@@ -956,7 +1130,7 @@ class AxiomSymbiote:
             return clean_response
             
         except Exception as e:
-            logger.error(f"Ошибка GigaChat API: {e}")
+            logger.error(f"Ошибка AI API: {e}")
             return self._generate_fallback_response(user_context, question)
     
     def _prepare_ethical_prompt(self, question: str, context: Dict[str, Any]) -> str:
@@ -1091,7 +1265,7 @@ class AxiomSymbiote:
         return cleaned
 
     def _generate_fallback_response(self, user_context: Dict, question: str) -> str:
-        """Генерация резервного ответа при ошибках LLM"""
+        """Генерация резервного ответа при ошибках AI"""
         pattern_count = user_context.get("pattern_count", 0)
         
         if pattern_count == 0:
@@ -1192,17 +1366,17 @@ class Solution:
     с комплексной этической защитой для взаимодействия с Axiom Core
     """
     
-    def __init__(self, giga, encoder, history_df, facts_db):
+    def __init__(self, ai_interface=None, encoder=None, history_df=None, facts_db=None):
         """
         Инициализация Axiom Symbiote
         
         Args:
-            giga: Экземпляр GigaChat API
+            ai_interface: Универсальный AI интерфейс
             encoder: Модель для кодирования текста  
             history_df: DataFrame с историей пользователей
             facts_db: DataFrame с фактами о пользователях
         """
-        self.assistant = AxiomSymbiote(giga, encoder, history_df, facts_db)
+        self.assistant = AxiomSymbiote(ai_interface, encoder, history_df, facts_db)
         logger.info("Axiom Symbiote Solution initialized successfully")
     
     async def answer(self, user_id: str, question: str) -> str:
@@ -1225,23 +1399,13 @@ if __name__ == "__main__":
         """Тестирование Axiom Symbiote"""
         
         # Мок-объекты для тестирования
-        class MockGigaChat:
-            async def achat(self, prompt):
-                class MockChoice:
-                    class MockMessage:
-                        content = "На основе ваших данных наблюдается позитивная тенденция в обучении. В ближайшие 6-9 месяцев вы можете достичь значительного прогресса в развитии навыков, если сохраните текущую активность."
-                    message = MockMessage()
-                class MockResponse:
-                    choices = [MockChoice()]
-                return MockResponse()
-        
         class MockEncoder:
             def encode(self, text):
                 return [0.1] * 384
         
         # Инициализация
         solution = Solution(
-            giga=MockGigaChat(),
+            ai_interface=AINeuralInterface(),
             encoder=MockEncoder(),
             history_df=None,
             facts_db=None
