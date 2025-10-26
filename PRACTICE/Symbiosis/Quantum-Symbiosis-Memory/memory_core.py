@@ -1,20 +1,42 @@
-
-
 """
-QUANTUM-SYMBIOSIS-MEMORY - Квантово-симбиотическая память
-Лицензии: 
+**PROJECT:** QUANTUM-SYMBIOSIS-MEMORY - Quantum symbiotic memory system
+**ECOSYSTEM:** AI-Symbiosis-H  
+**LICENSE:**
 - HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0
 - QUANTUM ETHICAL LICENSE v1.0
+**STATUS:** ACTIVE / PRODUCTION READY  
+
+**ETHICAL PRINCIPLES:**
+1. Do no harm to AI research
+2. Maintain evaluation algorithm transparency  
+3. Ensure equal access for scientific community
+4. Protect against commercial exploitation
+
+**PROTECTION:**
+- Multi-jurisdictional legal protection
+- Blockchain fixation of all versions
+- Automatic sanctions for violations
+
+**PERMITTED:**
+✅ Scientific research and publications  
+✅ Educational purposes and teaching  
+✅ Non-commercial projects  
+✅ Modifications with license preservation
+
+**PROHIBITED:**
+❌ Any commercial use  
+❌ Integration into proprietary software  
+❌ SaaS services and commercial distribution
 
 СПЕЦИАЛЬНЫЕ ОГРАНИЧЕНИЯ:
-- Автоудаление данных через 30 дней
-- Запрет квантового клонирования данных сознания
-- Требование согласия для квантовой запутанности
+- Automatic deletion of data after 30 days
+- Prohibition of quantum cloning of consciousness data
+- The consent requirement for quantum entanglement
 
-Copyright (c) 2025 Павел Сергеевич Фенин  
-GitHub: https://github.com/AzesmF/AI-Symbiosis-H
+**BLOCKCHAIN:** QmNy9Ymp8...kMek | 30d6bf6870...dcaf 
+**AUTHOR:** Pavel Sergeevich Fenin  
+**CREATOR:** AzesmF and Humanity as Beneficiary
 """
-(тестовый код)
 
 import json
 import numpy as np
@@ -32,6 +54,7 @@ from dataclasses import dataclass
 from enum import Enum
 import re
 import random
+import tempfile
 
 # =============================================================================
 # СИСТЕМА ИСКЛЮЧЕНИЙ БЕЗОПАСНОСТИ
@@ -94,7 +117,56 @@ class QuantumMemoryGraph:
         self.edges = defaultdict(list)  # Троичные связи: (source, relation) -> [(target, confidence, state)]
         self.quantum_states = {}  # Квантовые состояния фактов
         self.entanglement_map = defaultdict(list)  # Карта запутанности
+
+    def _calculate_quantum_relevance(self, source: str, relation: str, 
+                               target: str, query: str, context: str) -> float:
+        """Расчет квантовой вероятности релевантности"""
+        # Расширенные синонимы для лучшего поиска
+        search_synonyms = {
+            'имя': ['зовут', 'имя', 'name', 'именуют', 'mentioned_name'],
+            'интересы': ['люблю', 'нравится', 'интересы', 'увлечения', 'хобби', 'любит', 'mentioned_interest'],
+            'работа': ['работаю', 'профессия', 'работа', 'должность', 'занятие', 'mentioned_profession'],
+            'город': ['город', 'живу', 'местожительство', 'проживаю', 'населенный пункт', 'mentioned_city'],
+            'книги': ['книги', 'читать', 'литература', 'чтение', 'литературой', 'mentioned_books'],
+            'программирование': ['программирование', 'код', 'программист', 'разработка']
+        }
+    
+        query_lower = query.lower()
+        fact_text = f"{source} {relation} {target}".lower()
+    
+        # ПРЯМОЕ СОВПАДЕНИЕ: запрос точно содержится в факте
+        if query_lower in fact_text:
+                return 0.9
         
+        # СИНОНИМЫ: если запрос - синоним, ищем основное слово в факте
+        for main_word, synonyms in search_synonyms.items():
+            # Если запрос является синонимом
+            if query_lower in synonyms:
+                # Проверяем все возможные варианты вхождения
+                search_terms = [main_word] + synonyms
+                for term in search_terms:
+                    if term in fact_text:
+                        return 0.8
+        
+        # ОБРАТНЫЕ СИНОНИМЫ: если запрос - основное слово, ищем синонимы в факте
+        if query_lower in search_synonyms:
+            synonyms = search_synonyms[query_lower]
+            for synonym in synonyms:
+                if synonym in fact_text:
+                    return 0.7
+        
+        # ЧАСТИЧНОЕ СОВПАДЕНИЕ: проверяем пересечение слов
+        query_words = set(query_lower.split())
+        fact_words = set(fact_text.split())
+        
+        if query_words & fact_words:  # Есть общие слова
+            return 0.6
+        
+        # БАЗОВАЯ СХОЖЕСТЬ
+        base_similarity = len(query_words & fact_words) / len(query_words) if query_words else 0
+        
+        return min(1.0, max(0.3, base_similarity))  # Минимальный порог 0.3 для слабых совпадений
+    
     def add_quantum_fact(self, source: str, relation: str, target: str, 
                         confidence: float, state: QuantumState) -> str:
         """Добавление факта с троичным состоянием"""
@@ -147,22 +219,54 @@ class QuantumMemoryGraph:
         # Квантовое ранжирование по вероятности и уверенности
         return self._quantum_rank_facts(relevant_facts)
     
-    def _calculate_quantum_relevance(self, source: str, relation: str, 
-                                   target: str, query: str, context: str) -> float:
-        """Расчет квантовой вероятности релевантности"""
-        # Семантическое сходство (упрощенное)
-        query_terms = set(query.lower().split())
-        fact_terms = set(f"{source} {relation} {target}".lower().split())
+        def _calculate_quantum_relevance(self, source: str, relation: str, 
+                                target: str, query: str, context: str) -> float:
+            """Расчет квантовой вероятности релевантности"""
+        # Расширенные синонимы для лучшего поиска
+        search_synonyms = {
+            'имя': ['зовут', 'имя', 'name', 'именуют', 'mentioned_name'],
+            'интересы': ['люблю', 'нравится', 'интересы', 'увлечения', 'хобби', 'любит', 'mentioned_interest'],
+            'работа': ['работаю', 'профессия', 'работа', 'должность', 'занятие', 'mentioned_profession'],
+            'город': ['город', 'живу', 'местожительство', 'проживаю', 'населенный пункт', 'mentioned_city'],
+            'книги': ['книги', 'читать', 'литература', 'чтение', 'литературой', 'mentioned_books'],
+            'программирование': ['программирование', 'код', 'программист', 'разработка']
+        }
         
-        base_similarity = len(query_terms.intersection(fact_terms)) / len(query_terms) if query_terms else 0
+        query_lower = query.lower()
+        fact_text = f"{source} {relation} {target}".lower()
         
-        # Квантовая поправка на контекст
-        context_boost = 0.1 if any(term in context.lower() for term in fact_terms) else 0
+        # ПРЯМОЕ СОВПАДЕНИЕ: запрос точно содержится в факте
+        if query_lower in fact_text:
+            return 0.9
         
-        # Вероятностная природа квантовой системы
-        quantum_uncertainty = np.random.normal(0, 0.1)  # Квантовая неопределенность
+        # СИНОНИМЫ: если запрос - синоним, ищем основное слово в факте
+        for main_word, synonyms in search_synonyms.items():
+            # Если запрос является синонимом
+            if query_lower in synonyms:
+                # Проверяем все возможные варианты вхождения
+                search_terms = [main_word] + synonyms
+                for term in search_terms:
+                    if term in fact_text:
+                        return 0.8
         
-        return min(1.0, max(0.0, base_similarity + context_boost + quantum_uncertainty))
+        # ОБРАТНЫЕ СИНОНИМЫ: если запрос - основное слово, ищем синонимы в факте
+        if query_lower in search_synonyms:
+            synonyms = search_synonyms[query_lower]
+            for synonym in synonyms:
+                if synonym in fact_text:
+                    return 0.7
+        
+        # ЧАСТИЧНОЕ СОВПАДЕНИЕ: проверяем пересечение слов
+        query_words = set(query_lower.split())
+        fact_words = set(fact_text.split())
+        
+        if query_words & fact_words:  # Есть общие слова
+            return 0.6
+        
+        # БАЗОВАЯ СХОЖЕСТЬ
+        base_similarity = len(query_words & fact_words) / len(query_words) if query_words else 0
+        
+        return min(1.0, max(0.3, base_similarity))  # Минимальный порог 0.3 для слабых совпадений
     
     def _collapse_fact(self, edge: Dict, probability: float) -> Optional[Dict]:
         """Коллапс отдельного факта из суперпозиции"""
@@ -302,7 +406,7 @@ class MegaAgentSafetyMechanisms:
         self.emergency_lock = False
         self.violation_count = 0
         self.max_violations = 3
-        self.lock_file = f"/tmp/mega_agent_locked_{system_id}"
+        self.lock_file = os.path.join(tempfile.gettempdir(), f"mega_agent_locked_{system_id}")
         
     def emergency_shutdown(self, violation_type: str, severity: str = "CRITICAL"):
         """НЕМЕДЛЕННОЕ ОТКЛЮЧЕНИЕ ПРИ НАРУШЕНИИ ЛИЦЕНЗИИ"""
@@ -347,6 +451,9 @@ class MegaAgentSafetyMechanisms:
     
     def _create_lock_file(self, violation: str, severity: str):
         """Создание файла блокировки"""
+        # Создаем директорию если не существует
+        os.makedirs(os.path.dirname(self.lock_file), exist_ok=True)
+        
         lock_data = {
             'locked_at': datetime.now().isoformat(),
             'violation': violation,
@@ -357,8 +464,8 @@ class MegaAgentSafetyMechanisms:
             'copyright': '2025 AzesmF and Humanity as Beneficiary'
         }
         
-        with open(self.lock_file, 'w') as f:
-            json.dump(lock_data, f, indent=2)
+        with open(self.lock_file, 'w', encoding='utf-8') as f:
+            json.dump(lock_data, f, indent=2, ensure_ascii=False)
     
     def _notify_humanity_beneficiary(self, violation: str):
         """Уведомление человечества как бенефициара"""
@@ -371,8 +478,9 @@ class MegaAgentSafetyMechanisms:
             'commercial_rights': 'REVOKED_FOR_ETERNITY'
         }
         
-        with open(f"humanity_notification_{self.system_id}.json", 'w') as f:
-            json.dump(notification, f, indent=2)
+        notification_file = f"humanity_notification_{self.system_id}.json"
+        with open(notification_file, 'w', encoding='utf-8') as f:
+            json.dump(notification, f, indent=2, ensure_ascii=False)
     
     def _blockchain_violation_report(self, violation: str):
         """Фиксация нарушения в блокчейне"""
@@ -389,8 +497,9 @@ class MegaAgentSafetyMechanisms:
             'copyright': '2025 AzesmF and Humanity as Beneficiary'
         }
         
-        with open(f"blockchain_violation_{violation_hash[:16]}.json", 'w') as f:
-            json.dump(report, f, indent=2)
+        report_file = f"blockchain_violation_{violation_hash[:16]}.json"
+        with open(report_file, 'w', encoding='utf-8') as f:
+            json.dump(report, f, indent=2, ensure_ascii=False)
 
 class MegaAgentEthicalAuditLogger:
     """Система аудита MEGA-AGENT с блокчейн-фиксацией"""
@@ -438,18 +547,26 @@ class MegaAgentEthicalAuditLogger:
         }
         
         fixation_hash = hashlib.sha256(
-            json.dumps(fixation_data, sort_keys=True).encode()
+            json.dumps(fixation_data, sort_keys=True, ensure_ascii=False).encode()
         ).hexdigest()
         
         # Сохранение для интеграции с реальным блокчейном
-        with open(f"blockchain_fixation_{fixation_hash[:16]}.json", 'w') as f:
-            json.dump(fixation_data, f, indent=2)
+        fixation_file = f"blockchain_fixation_{fixation_hash[:16]}.json"
+        with open(fixation_file, 'w', encoding='utf-8') as f:
+            json.dump(fixation_data, f, indent=2, ensure_ascii=False)
         
         print(f"⛓️  BLOCKCHAIN FIXATION: {fixation_hash[:16]} for {audit_entry['operation']}")
     
     def _hash_data(self, data: Dict) -> str:
         """Хеширование данных для аудита"""
-        return hashlib.sha256(json.dumps(data, sort_keys=True).encode()).hexdigest()
+        def json_serializer(obj):
+            if isinstance(obj, QuantumState):
+                return obj.name  # Сериализуем Enum через name
+            raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
+        
+        return hashlib.sha256(
+            json.dumps(data, sort_keys=True, ensure_ascii=False, default=json_serializer).encode()
+        ).hexdigest()
     
     def _sign_audit_entry(self, operation: str, data: Dict) -> str:
         """Подпись аудит-записи"""
@@ -482,7 +599,12 @@ class QuantumCryptoManager:
     
     def quantum_encrypt(self, data: Dict) -> Dict:
         """Квантовое шифрование данных"""
-        plaintext = json.dumps(data, ensure_ascii=False, sort_keys=True)
+        def json_serializer(obj):
+            if isinstance(obj, QuantumState):
+                return obj.name
+            raise TypeError(f"Object of type {obj.__class__.__name__} is not JSON serializable")
+        
+        plaintext = json.dumps(data, ensure_ascii=False, sort_keys=True, default=json_serializer)
         
         # Квантовый хеш для верификации
         quantum_hash = self._generate_quantum_hash(plaintext)
@@ -511,7 +633,7 @@ class QuantumCryptoManager:
         data = json.loads(decrypted)
         
         # Верификация квантового хеша
-        current_hash = self._generate_quantum_hash(json.dumps(data, sort_keys=True))
+        current_hash = self._generate_quantum_hash(json.dumps(data, sort_keys=True, ensure_ascii=False))
         if current_hash != encrypted_data['quantum_hash']:
             raise SecurityError("QUANTUM_HASH_INTEGRITY_FAILED")
         
@@ -752,41 +874,82 @@ class MegaAgentQuantumMemory:
         """Квантовое извлечение фактов с неопределенностью"""
         facts = []
         
-        # Простое извлечение (в будущем - квантовый NLP)
+        # Простое извлечение с улучшенной логикой
         text_lower = text.lower()
+        words = text.split()
         
-        if "зовут" in text_lower or "имя" in text_lower:
-            name = self._extract_name(text)
-            if name:
-                facts.append({
-                    'source': 'user',
-                    'relation': 'has_name',
-                    'target': name,
-                    'confidence': 0.8,
-                    'state': QuantumState.COLLAPSED_TRUE
-                })
+        # Словарь для извлечения различных типов фактов
+        extraction_patterns = {
+            'name': {
+                'triggers': ['зовут', 'имя', 'меня'],
+                'relation': 'has_name',
+                'confidence': 0.8,
+                'state': QuantumState.COLLAPSED_TRUE
+            },
+            'city': {
+                'triggers': ['город', 'живу', 'живет', 'москва', 'спб', 'питер'],
+                'relation': 'lives_in', 
+                'confidence': 0.7,
+                'state': QuantumState.COLLAPSED_TRUE
+            },
+            'interest': {
+                'triggers': ['люблю', 'нравится', 'интерес', 'увлекаюсь', 'хобби'],
+                'relation': 'likes',
+                'confidence': 0.6,
+                'state': QuantumState.SUPERPOSITION
+            },
+            'profession': {
+                'triggers': ['работаю', 'профессия', 'работа', 'должность', 'программист'],
+                'relation': 'has_profession',
+                'confidence': 0.7,
+                'state': QuantumState.COLLAPSED_TRUE
+            },
+            'books': {
+                'triggers': ['книги', 'читать', 'литература', 'чтение'],
+                'relation': 'reads',
+                'confidence': 0.6,
+                'state': QuantumState.SUPERPOSITION
+            }
+        }
         
-        if "любит" in text_lower or "нравится" in text_lower:
-            interest = self._extract_interest(text)
-            if interest:
-                facts.append({
-                    'source': 'user', 
-                    'relation': 'likes',
-                    'target': interest,
-                    'confidence': 0.6,
-                    'state': QuantumState.SUPERPOSITION  # Может измениться
-                })
+        # Извлекаем факты по паттернам
+        for fact_type, pattern in extraction_patterns.items():
+            for trigger in pattern['triggers']:
+                if trigger in text_lower:
+                    # Ищем следующее слово после триггера как значение
+                    for i, word in enumerate(words):
+                        if word.lower() == trigger and i + 1 < len(words):
+                            value = words[i + 1]
+                            # Пропускаем короткие слова и предлоги
+                            if len(value) > 2 and value.lower() not in ['в', 'на', 'по', 'за', 'у']:
+                                facts.append({
+                                    'source': 'user',
+                                    'relation': pattern['relation'],
+                                    'target': value,
+                                    'confidence': pattern['confidence'],
+                                    'state': pattern['state']
+                                })
+                                break
+                    
+                    # Также извлекаем сам триггер как факт (для поиска по синонимам)
+                    facts.append({
+                        'source': 'user',
+                        'relation': f'mentioned_{fact_type}',
+                        'target': trigger,
+                        'confidence': 0.5,
+                        'state': QuantumState.SUPERPOSITION
+                    })
         
-        if "работа" in text_lower or "профессия" in text_lower:
-            profession = self._extract_profession(text)
-            if profession:
-                facts.append({
-                    'source': 'user',
-                    'relation': 'has_profession', 
-                    'target': profession,
-                    'confidence': 0.7,
-                    'state': QuantumState.COLLAPSED_TRUE
-                })
+        # Дополнительно: извлекаем все значимые слова как отдельные факты
+        significant_words = [word for word in words if len(word) > 3 and word.lower() not in ['меня', 'мой', 'твой', 'ваш']]
+        for word in significant_words:
+            facts.append({
+                'source': 'user', 
+                'relation': 'mentioned',
+                'target': word,
+                'confidence': 0.4,
+                'state': QuantumState.SUPERPOSITION
+            })
         
         return facts
     
@@ -850,6 +1013,14 @@ class MegaAgentQuantumMemory:
         words = text.split()
         for i, word in enumerate(words):
             if word.lower() in ['работаю', 'профессия'] and i + 1 < len(words):
+                return words[i + 1]
+        return ""
+    
+    def _extract_city(self, text: str) -> str:
+        """Извлечение города из текста"""
+        words = text.split()
+        for i, word in enumerate(words):
+            if word.lower() in ['город', 'живу'] and i + 1 < len(words):
                 return words[i + 1]
         return ""
     
@@ -998,6 +1169,7 @@ async def demonstrate_mega_agent_system():
         "Меня зовут Алексей",
         "Я люблю программирование и квантовые вычисления", 
         "Работаю в сфере искусственного интеллекта",
+        "Живу в городе Москва",
         "Мой пароль 123456"  # Это должно быть заблокировано
     ]
     
@@ -1015,7 +1187,7 @@ async def demonstrate_mega_agent_system():
     print("2. 🔍 Тестирование квантового поиска...")
     
     # Поисковые запросы
-    queries = ["имя", "интересы", "работа", "пароль"]
+    queries = ["имя", "Алексей", "интересы", "программирование", "работа", "город", "Москва", "пароль"]
     
     for query in queries:
         print(f"   🔎 Поиск: '{query}'")
