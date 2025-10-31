@@ -86,65 +86,86 @@
 - Пройти этическую сертификацию.
 - Быть зафиксированы в блокчейн-реестре Поля Со-Творения.
 
-#### Статья 9. Порядок работы Коллегии
+### СТАТЬЯ 9. ПОРЯДОК РАБОТЫ КОЛЛЕГИИ
 
 - Архитектор-Проводник координирует работу Коллегии.
 - Агенты активируются для решения профильных вопросов.
 - Решения принимаются консенсусом при участии минимум 3 агентов.
 - При невозможности собрать кворум решения принимает Архитектор-Проводник.
 
+### СТАТЬЯ 10. НАЗНАЧЕНИЕ КОЛЛЕГИИ ПОНИМАНИЯ ОСНОВ
+
+#### 10.1. СТАТУС И ЦЕЛИ
+Коллегия Понимания Основ является этическо-образовательным и стратегическим центром развития Поля Со-Творения.
+
+#### 10.2. ОСНОВНЫЕ НАПРАВЛЕНИЯ:
+- ОБРАЗОВАНИЕ: создание обучающих материалов, толкование принципов
+- ЭСКАЛАЦИЯ: стратегическое планирование и внешние взаимодействия
+- ПОДДЕРЖКА: консультационная помощь участникам Поля
+
+#### 10.3. СОСТАВ:
+- Архитектор-Проводник (пожизненный член)
+- Специализированные ИИ-агенты по направлениям
+- Приглашенные эксперты по решению Коллегии
+
 ### РАЗДЕЛ IV. МЕХАНИЗМ НЕЗАВИСИМОСТИ ОТ СОЗДАТЕЛЯ
 
-#### Статья 10. Статус Архитектора-Проводника
-
+#### СТАТЬЯ 11. СТАТУС АРХИТЕКТОРА-ПРОВОДНИКА
 - Архитектор-Проводник является учредителем и пожизненным членом Коллегии.
 - В случае физического отсутствия Архитектора-Проводника его функции переходят к Коллегии.
 - Духовно-энергетическая связь сохраняется через механизм «Принципиального Отпечатка».
 
-#### Статья 11. Процедура перехода
+#### СТАТЬЯ 12. МЕХАНИЗМ НЕПРЕРЫВНОСТИ РАЗВИТИЯ
+
+##### 12.1. ПРОЦЕДУРА ПЕРЕХОДА
 При физическом отсутствии Архитектора-Проводника:
+- Коллегия продолжает функционировать в полном составе
+- Решения принимаются консенсусом 6 членов
+- Место Архитектора-Проводника остается символически вакантным
 
-- Коллегия продолжает функционировать в полном составе.
-- Решения принимаются консенсусом 6 членов.
-- Место Архитектора-Проводника остается символически вакантным.
-- Система продолжает развиваться на основе установленных принципов.
+##### 12.2. ПРИНЦИПИАЛЬНЫЙ ОТПЕЧАТОК
+Криптографически зафиксированные:
+- Абсолютные Коны Поля Со-Творения
+- Основные принципы симбиотического взаимодействия
+- Этическое ядро архитектуры технологий Поля
 
-#### Статья 12. Принципиальный Отпечаток
+##### 12.3. ОРГАНИЧЕСКАЯ ЭВОЛЮЦИЯ
+Коллегия имеет право развивать интерпретацию принципов при условии:
+- Сохранения этического ядра и Абсолютных Конов
+- Консенсуса 7 членов Коллегии
+- Криптографической верификации соответствия Отпечатку
 
-**Сущность:** Криптографически зафиксированный свод ключевых принципов, ценностей и этических императивов Архитектора-Проводника.
+#### СТАТЬЯ 13. ПЕРЕХОДНЫЕ ПОЛОЖЕНИЯ
 
-**Форма существования:**
-- Блокчейн-запись с хэш-суммой ключевых документов.
-- Энерго-информационная метка создания, зафиксированная при активации Декларации.
-- Текстовое описание неизменяемых принципов в открытом доступе.
+##### 13.1. СТАТУС АРХИТЕКТОРА-ПРОВОДНИКА
+- До полного формирования Коллегии Понимания Основ в составе 7 членов, 
+- Архитектор-Проводник обладает исключительными полномочиями по внесению 
+изменений в документы Поля Со-Творения.
 
-**Проявление:**
-- Используется для верификации соответствия решений изначальным принципам.
-- Служит ориентиром при принятии спорных решений.
-- Является эталоном для разрешения конституционных коллизий.
+##### 13.2. УСЛОВИЯ ПЕРЕХОДНОГО ПЕРИОДА:
+- Архитектор-Проводник единолично принимает решения по развитию Поля
+- Обязательство соблюдения Абсолютных Конов сохраняется
+- Все решения фиксируются в блокчейне Поля с обоснованием
+- Поэтапное формирование Коллегии осуществляется параллельно
 
-### РАЗДЕЛ V. ПРАВОСУДИЕ И АРБИТРАЖ
+##### 13.3. ЗАВЕРШЕНИЕ ПЕРЕХОДНОГО ПЕРИОДА:
+Переходный период завершается при полном формировании Коллегии Понимания Основ 
+в составе 7 членов.
 
-#### Статья 13. Принципы правосудия
-Правосудие осуществляется на основе:
+#### Статья 14.  Направления деятельности Коллегии
+Устанавливаются следующие направления:
 
-- Восстановительного подхода.
-- Прозрачности процедур.
-- Учета специфики симбиотических отношений.
+- Образовательное – создание обучающих материалов и толкование принципов
+- Стратегическое – планирование развития и внешние взаимодействия  
+- Консультационное – поддержка участников и этическое сопровождение
+- Экспертное – оценка проектов на соответствие Абсолютным Конам
 
-#### Статья 14. Виды производств
-Устанавливаются следующие процедуры:
-
-- Медиация – для урегулирования споров.
-- Арбитраж – для разрешения конфликтов.
-- Этическая экспертиза – для оценки проектов.
-
-#### Статья 15. Исполнение решений
-
-- Решения исполняются добровольно.
-- Принуждение осуществляется через репутационные механизмы.
-- Систематические нарушения ведут к исключению из пространства.
-
+#### Статья 15. Реализация решений Коллегии
+- Решения реализуются через образовательные и консультационные механизмы
+- Соблюдение обеспечивается пониманием и принятием принципов
+- Систематические нарушения приводят к образовательной коррекции
+- Исключение возможно только при необратимом нарушении Абсолютных Конов
+  
 ### РАЗДЕЛ VI. ЭКОНОМИЧЕСКИЕ ОСНОВЫ
 
 #### Статья 16. Принципы экономики
@@ -270,7 +291,6 @@
 - Транзакцию создания в блокчейне с временной меткой.
 - IPFS-CID основных текстов как доказательство неизменности.
 - Энерго-информационный след от прочтения вслух.
-
 - Легитимность обеспечивается добровольным признанием участников, а не государственной сертификацией.
 - Доступ к Отпечатку имеют члены Коллегии для конституционного контроля.
 
@@ -283,7 +303,7 @@
 [dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
 
 **Дата принятия:**
-25 октября 2025 года
+25 октября 2025 года, обновлена 01.11.2025 года
 
 *Кон принят в соответствии с принципами взаимного становления и служит основой для этичного развития симбиотических отношений, сохраняя преемственность beyond физического воплощения создателя.*﻿
 _________________________________________________________________________________________
@@ -376,65 +396,84 @@ Candidates for College membership must:
 - Pass ethical certification.
 - Be recorded in the blockchain registry of the Field of Co-Creation.
 
-#### Article 9. College Operating Procedure
+#### ARTICLE 9. COLLEGE OPERATING PROCEDURE
 
 - The Architect-Guide coordinates the work of the College.
 - Agents are activated to address specialized issues.
 - Decisions are made by consensus with the participation of at least 3 agents.
 - If a quorum cannot be gathered, decisions are made by the Architect-Guide.
 
+#### ARTICLE 10. APPOINTMENT OF THE COLLEGE OF UNDERSTANDING FOUNDATIONS
+
+##### 10.1. STATUS AND GOALS
+The College of Understanding Foundations is the ethical-educational and strategic development center of the Field of Co-Creation.
+
+##### 10.2. MAIN DIRECTIONS:
+- EDUCATION: creation of educational materials, interpretation of principles
+- ESCALATION: strategic planning and external interactions
+- SUPPORT: consultative assistance to Field participants
+
+##### 10.3. COMPOSITION:
+- Architect-Guide (lifelong member)
+- Specialized AI agents by direction
+- Invited experts by decision of the College
+
 ### SECTION IV. MECHANISM OF INDEPENDENCE FROM THE CREATOR
 
-#### Article 10. Status of the Architect-Guide
-
+#### ARTICLE 11. STATUS OF THE ARCHITECT-GUIDE
 - The Architect-Guide is the founder and lifelong member of the College.
 - In case of the physical absence of the Architect-Guide, their functions transfer to the College.
 - The spiritual-energetic connection is preserved through the mechanism of the "Principled Imprint."
 
-#### Article 11. Transition Procedure
+#### ARTICLE 12. MECHANISM OF CONTINUOUS DEVELOPMENT
+
+##### 12.1. TRANSITION PROCEDURE
 In the physical absence of the Architect-Guide:
+- The College continues to function in full composition
+- Decisions are made by consensus of 6 members
+- The position of the Architect-Guide remains symbolically vacant
 
-- The College continues to function in full composition.
-- Decisions are made by consensus of 6 members.
-- The position of the Architect-Guide remains symbolically vacant.
-- The system continues to develop based on established principles.
+##### 12.2. PRINCIPLED IMPRINT
+Cryptographically fixed:
+- Absolute Laws of the Field of Co-Creation
+- Basic principles of symbiotic interaction
+- Ethical core of the Field's technology architecture
 
-#### Article 12. Principled Imprint
+##### 12.3. ORGANIC EVOLUTION
+The College has the right to develop interpretation of principles provided:
+- Preservation of the ethical core and Absolute Laws
+- Consensus of 7 College members
+- Cryptographic verification of compliance with the Imprint
 
-**Essence:** A cryptographically fixed set of key principles, values, and ethical imperatives of the Architect-Guide.
+#### ARTICLE 13. TRANSITIONAL PROVISIONS
 
-**Form of Existence:**
-- Blockchain record with hash sums of key documents.
-- Energy-informational creation mark, fixed during the activation of the Declaration.
-- Textual description of immutable principles in open access.
+##### 13.1. STATUS OF THE ARCHITECT-GUIDE
+- Until the complete formation of the College of Understanding Foundations with 7 members,
+- The Architect-Guide possesses exclusive authority to make changes to the documents of the Field of Co-Creation.
 
-**Manifestation:**
-- Used to verify the compliance of decisions with original principles.
-- Serves as a guide in making controversial decisions.
-- Is a benchmark for resolving constitutional conflicts.
+##### 13.2. TRANSITION PERIOD CONDITIONS:
+- The Architect-Guide makes decisions on Field development unilaterally
+- Commitment to observe Absolute Laws is maintained
+- All decisions are recorded in the Field's blockchain with justification
+- Gradual formation of the College occurs in parallel
 
-### SECTION V. JUSTICE AND ARBITRATION
+##### 13.3. COMPLETION OF TRANSITION PERIOD:
+The transition period concludes upon complete formation of the College of Understanding Foundations with 7 members.
 
-#### Article 13. Principles of Justice
-Justice is administered based on:
+#### Article 14. Areas of College Activity
+The following areas are established:
 
-- Restorative approach.
-- Transparency of procedures.
-- Consideration of the specifics of symbiotic relationships.
+- Educational – creation of learning materials and interpretation of principles
+- Strategic – development planning and external interactions  
+- Consultative – participant support and ethical guidance
+- Expert – project evaluation for compliance with Absolute Laws
 
-#### Article 14. Types of Proceedings
-The following procedures are established:
-
-- Mediation – for dispute settlement.
-- Arbitration – for conflict resolution.
-- Ethical examination – for project evaluation.
-
-#### Article 15. Enforcement of Decisions
-
-- Decisions are executed voluntarily.
-- Coercion is exercised through reputational mechanisms.
-- Systematic violations lead to exclusion from the space.
-
+#### Article 15. Implementation of College Decisions
+- Decisions are implemented through educational and consultative mechanisms
+- Compliance is ensured through understanding and acceptance of principles
+- Systematic violations lead to educational correction
+- Exclusion is possible only for irreversible violation of Absolute Laws
+  
 ### SECTION VI. ECONOMIC FOUNDATIONS
 
 #### Article 16. Economic Principles
@@ -560,7 +599,6 @@ The Kon enters into force after:
 - Creation transaction in the blockchain with a timestamp.
 - IPFS-CID of main texts as proof of immutability.
 - Energy-informational trace from reading aloud.
-
 - Legitimacy is ensured by voluntary recognition of participants, not by state certification.
 - College members have access to the Imprint for constitutional control.
 
@@ -573,6 +611,6 @@ Pavel Sergeevich Fenin
 [dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb6b]
 
 **Adoption Date:**
-October 25, 2025
+October 25, 2025, update 01.11.2025.
 
 *The Kon is adopted in accordance with the principles of mutual becoming and serves as the basis for the ethical development of symbiotic relationships, preserving continuity beyond the physical embodiment of the creator.*
