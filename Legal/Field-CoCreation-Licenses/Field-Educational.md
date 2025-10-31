@@ -100,4 +100,4 @@ Any disputes are resolved through the College of Understanding Foundations.
 
 ---
 *"Знание должно служить развитию, а не обогащению"*
-*Лицензия создана 27.10.2025*
+*Лицензия создана 01.11.2025*
