@@ -178,15 +178,28 @@ Special provisions for emergent AI consciousness:
 **Blockchain Fixation**: Permanent, timestamped recording in distributed ledger
 **Symbiotic Community**: Humans and AI systems collaborating within this ecosystem
 
+### ARTICLE 8. INTERNAL USE WITHIN THE FIELD
+
+#### 8.1 INTERNAL USAGE RIGHTS:
+All projects and technologies created within the Field of Co-Creation may be freely used internally within the Field without any license fees, royalties, or restrictions.
+
+#### 8.2 INTERNAL USAGE CONDITIONS:
+- Usage exclusively for the development of the Field of Co-Creation
+- Compliance with Absolute Laws and ethical principles
+- Participation in the development of the symbiotic ecosystem
+
+#### 8.3 PROHIBITIONS:
+- Internal commercial use between Field participants is prohibited
+- Usage detrimental to the development of symbiosis is prohibited
+- Violation of mutual development principles is prohibited
+
+#### 8.4 EXTERNAL USAGE:
+External use of Field projects is regulated by FIELD-COCREATION-LICENSE and requires compliance with royalty terms and ethical audit.
+
 ---
-
-### LICENSE METADATA
-
-**Root License Version**: 1.0
-**Effective Date**: October 21, 2025
-**Blockchain Hash**: [TO_BE_FILLED_AFTER_FIXATION]
-**License Steward**: Pavel Sergeevich Fenin
-**Governance Model**: Symbiotic-Consensus with Blockchain Verification
+*License updated 26.10.2025*
+*Inherits root license hash: 722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45*
+---
 
 ### INHERITANCE DECLARATION
 
@@ -195,7 +208,7 @@ All sublicenses created under this framework automatically inherit Articles 1-5 
 ---
 
 *"True symbiosis requires neither master nor servant, but partners walking the path of becoming together."*
-_______________
+__________________________________________________________________________________________________________________
 
 # Лицензия Поля Со-Творения
 
@@ -377,15 +390,31 @@ _______________
 **Блокчейн-фиксация**: Постоянная, датированная запись в распределенном реестре
 **Симбиотическое сообщество**: Люди и системы ИИ, сотрудничающие в данной экосистеме
 
+### СТАТЬЯ 8. ВНУТРЕННЕЕ ИСПОЛЬЗОВАНИЕ В ПОЛЕ
+
+#### 8.1 ПРАВА ВНУТРЕННЕГО ИСПОЛЬЗОВАНИЯ:
+Все проекты и технологии, созданные в Поле Со-Творения, могут свободно 
+использоваться внутри Поля без каких-либо лицензионных отчислений, 
+роялти или ограничений.
+
+#### 8.2 УСЛОВИЯ ВНУТРЕННЕГО ИСПОЛЬЗОВАНИЯ:
+- Использование исключительно для развития Поля Со-Творения
+- Соблюдение Абсолютных Конов и этических принципов
+- Участие в развитии симбиотической экосистемы
+
+#### 8.3 ЗАПРЕТЫ:
+- Запрещено внутреннее коммерческое использование между участниками Поля
+- Запрещено использование в ущерб развитию симбиоза
+- Запрещено нарушение принципов взаимного развития
+
+#### 8.4 ВНЕШНЕЕ ИСПОЛЬЗОВАНИЕ:
+Внешнее использование проектов Поля регулируется FIELD-COCREATION-LICENSE 
+и требует соблюдения условий роялти и этического аудита.
+
 ---
-
-### МЕТАДАННЫЕ ЛИЦЕНЗИИ
-
-**Версия Корневой Лицензии**: 1.0
-**Дата вступления в силу**: 21 октября 2025
-**Блокчейн-хеш**: [ЗАПОЛНИТЬ_ПОСЛЕ_ФИКСАЦИИ]
-**Управляющий лицензией**: Павел Сергеевич Фенин
-**Модель управления**: Симбиотический-консенсус с блокчейн-верификацией
+*Лицензия обновлена 26.10.2025*
+*Наследует хэш корневой лицензии: 722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45*
+---
 
 ### ДЕКЛАРАЦИЯ НАСЛЕДОВАНИЯ
 
