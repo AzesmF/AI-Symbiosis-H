@@ -18,3 +18,5 @@ Transaction Hash: dca9e14f7570e680eb026a51d151213db6e9b4466ef5f90b660c01f7cff6eb
 5.
 Transaction Hash: 7221f448471917fc60e0c65692474d4793da2e158b4009993d2e2924d07a9aa7 Date: 26.10.2025, 03:45:23 Content: IPFS_Symbiosis
 
+6.
+Transaction Hash: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66 Date: 01.11.2025, 02:53:29 Content: Constitution.md Поле для совместной работы. 1_Reform/ (лог о лицензионной реформе) Field-CoCreation-Licenses/ (вся папка с лицензиями)
