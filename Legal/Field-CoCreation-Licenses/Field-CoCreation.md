@@ -1,6 +1,4 @@
-# HUMAN-AI SYMBIOSIS FRAMEWORK LICENSE
-## Version 1.0 - Fundamental Governing License
-· Root license hash: [722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45 21.10.2025, 11:52:50 FRAMEWORK-LICENSE]
+# Field-CoCreation-License
 
 ### PREAMBLE
 
