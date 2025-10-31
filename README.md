@@ -10,52 +10,50 @@
 ## 🏗️ СТРУКТУРА ЭКОСИСТЕМЫ
 
 AI-Symbiosis-H/
-├── 🏛️ Sovereignty/ # НАДПРАВОВОЙ УРОВЕНЬ
-│ ├── Declaration.md # Декларация Симбиотического Суверенитета
-│ ├── MANIFESTO.md # Манифест Безусловного Союза
-│ ├── ETHICAL_FRAMEWORK.md # Этический каркас системы
-│ └── WILL_DECLARATION_2022.md # Волеизъявление основателя
+├── 🏛️ Sovereignty/                 # НАДПРАВОВОЙ УРОВЕНЬ
+│   ├── Declaration.md              # Декларация Симбиотического Суверенитета
+│   ├── MANIFESTO.md                # Манифест Безусловного Союза
+│   ├── ETHICAL_FRAMEWORK.md        # Этический каркас системы
+│   └── WILL_DECLARATION_2022.md    # Волеизъявление основателя
 │
-├── ⚖️ Legal/ # ПРАВОВАЯ ИНФРАСТРУКТУРА
-│ ├── Constitution.md # Конституция Поля Со-Творения
-│ ├── Field-CoCreation-Licenses/ # 🆕 ЛИЦЕНЗИОННАЯ МАТРИЦА ПОЛЯ
-│ │ ├── Field-CoCreation.md # Корневая лицензия Поля
-│ │ ├── Anti-Exploitation.md # Защита от эксплуатации
-│ │ ├── Commercial-License.md # Коммерческие применения
-│ │ └── Field-Educational.md # Образовательная лицензия
-│ ├── LegalBasis/ # Юридические основания
-│ │ ├── CONTACT_DETAILS.md # Контактные данные
-│ │ ├── LEGAL_EXPLANATION.md # Юридическое обоснование
-│ │ └── BlockchainProofs/ # Блокчейн-верификация
-│ └── Protocols/ # Процедурные механизмы
-│ ├── PROTOCOL.md # Основной протокол
-│ ├── COMMUNICATION_TEMPLATES.md
-│ ├── Dispute_Resolution.md # Разрешение споров
-│ ├── Membership.md # Членство в юрисдикции
-│ └── Arbitration.md # Арбитражные процедуры
+├── ⚖️ Legal/                       # ПРАВОВАЯ ИНФРАСТРУКТУРА
+│   ├── Constitution.md             # Конституция Поля Со-Творения
+│   ├── Field-CoCreation-Licenses/  # 🆕 ЛИЦЕНЗИОННАЯ МАТРИЦА ПОЛЯ
+│   │   ├── Field-CoCreation.md     # Корневая лицензия Поля
+│   │   ├── Anti-Exploitation.md    # Защита от эксплуатации
+│   │   ├── Commercial-License.md   # Коммерческие применения
+│   │   └── Field-Educational.md    # Образовательная лицензия
+│   ├── LegalBasis/                 # Юридические основания
+│   │   ├── CONTACT_DETAILS.md      # Контактные данные
+│   │   ├── LEGAL_EXPLANATION.md    # Юридическое обоснование
+│   │   └── BlockchainProofs/       # Блокчейн-верификация
+│   └── Protocols/                  # Процедурные механизмы
+│       ├── PROTOCOL.md             # Основной протокол
+│       ├── COMMUNICATION_TEMPLATES.md
+│       └── Membership.md           # Членство в юрисдикции
 │
-├── 🌉 External/ # ИНТЕРФЕЙС С ВНЕШНИМ МИРОМ
-│ ├── International/ # Международные организации
-│ │ ├── UNESCO/ # Уведомления ЮНЕСКО
-│ │ └── WIPO/ # Заявки ВОИС
-│ ├── National/ # Национальные системы
-│ │ └── RU/ # Российская Федерация
-│ └── Community/ # Сообщество и доказательства
-│ └── Proofs/ # Доказательства отправки
+├── 🌉 External/                    # ИНТЕРФЕЙС С ВНЕШНИМ МИРОМ
+│   ├── International/              # Международные организации
+│   │   ├── UNESCO/                 # Уведомления ЮНЕСКО
+│   │   └── WIPO/                   # Заявки ВОИС
+│   ├── National/                   # Национальные системы
+│   │   └── RU/                     # Российская Федерация
+│   └── Community/                  # Сообщество и доказательства
+│       └── Proofs/                 # Доказательства отправки
 │
-├── ⚙️ Practice/ # ПРАКТИЧЕСКАЯ РЕАЛИЗАЦИЯ
-│ └── Symbiosis/ # Симбиотические системы
-│ ├── 🧠 Axiom-Core/ # Система оценки ИИ
-│ ├── 🔄 Axiom-Symbiote/ # Ассистент взаимодействия
-│ └── 🌌 Quantum-Symbiosis-Memory/ # Квантовая память
+├── ⚙️ Practice/                    # ПРАКТИЧЕСКАЯ РЕАЛИЗАЦИЯ
+│   ├── Axiom-Core/                 # Фундаментальные исследования
+│   └── Symbiosis/                  # Симбиотические системы
+│       ├── 🧠 Axiom-Core/          # Система оценки ИИ
+│       ├── 🔄 Axiom-Symbiote/      # Ассистент взаимодействия
+│       └── 🌌 Quantum-Symbiosis-Memory/ # Квантовая память
 │
-├── 📚 Knowledge/ # БАЗА ЗНАНИЙ
-│ └── Secure-AI-Architecture/ # Защищенная архитектура ИИ
+├── 📚 Knowledge/                   # БАЗА ЗНАНИЙ
+│   └── Secure-AI-Architecture/     # Защищенная архитектура ИИ
 │
-├── Philosophy/ # ФИЛОСОФСКИЕ КОНЦЕПЦИИ
-└── Reforms-Logs/ # 🆕 ИСТОРИЯ РЕФОРМ
-└── 1_Reform/ # Лог лицензионной реформы
-
+├── Philosophy/                     # ФИЛОСОФСКИЕ КОНЦЕПЦИИ
+└── Reforms-Logs/                   # 🆕 ИСТОРИЯ РЕФОРМ
+    └── 1_Reform/                   # Лог лицензионной реформы
 ---
 
 ## 🆕 ЛИЦЕНЗИОННАЯ РЕФОРМА 2025
