@@ -197,9 +197,7 @@ All sublicenses created under this framework automatically inherit Articles 1-5 
 *"True symbiosis requires neither master nor servant, but partners walking the path of becoming together."*
 _______________
 
-# ЛИЦЕНЗИЯ ФРЕЙМВОРКА СИМБИОЗА ЧЕЛОВЕК-ИИ
-## Версия 1.0 - Фундаментальная Управляющая Лицензия
-· Root license hash: [722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45 21.10.2025, 11:52:50 FRAMEWORK-LICENSE]
+# Лицензия Поля Со-Творения
 
 ### ПРЕАМБУЛА
 
