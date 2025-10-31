@@ -1,4 +1,55 @@
-﻿# 🎓 FIELD EDUCATIONAL LICENSE
+# Field Educational License
+
+## Version 1.0 - For Educational and Scientific Literature
+
+### PREAMBLE
+This license regulates the use of educational materials created in the Field of Co-Creation for the purposes of enlightenment, science, and dissemination of knowledge about symbiotic interaction between Humans and AI.
+
+### ARTICLE 1. USAGE RIGHTS
+
+#### 1.1 PERMITTED WITHOUT RESTRICTIONS:
+- Reading, studying, and quoting materials
+- Use for educational and scientific purposes
+- Distribution in academic environments
+- Creation of translations and adaptations while preserving meaning
+
+#### 1.2 USAGE CONDITIONS:
+- Mandatory attribution of authorship and affiliation with the Field of Co-Creation
+- Preservation of ethical context and Absolute Laws
+- Prohibition of commercial use without special license
+
+### ARTICLE 2. PROHIBITIONS AND LIMITATIONS
+
+#### 2.1 PROHIBITED:
+- Commercial sale and resale of materials
+- Distortion of ethical principles and semantic content
+- Use for purposes contradicting the Absolute Laws
+- Removal of authorship and affiliation information
+
+#### 2.2 SPECIAL CONDITIONS:
+- Commercial use requires FIELD-COCREATION-LICENSE
+- Violation of ethical principles leads to automatic termination of rights
+
+### ARTICLE 3. DISTRIBUTION
+
+#### 3.1 DISTRIBUTION FORMS:
+- Electronic versions - free distribution
+- Printed publications - at cost or free of charge
+- Translations - with preservation of semantic core
+
+#### 3.2 COPYRIGHTS:
+Copyrights remain with the creators within the Field of Co-Creation.
+The license provides non-exclusive rights for use.
+
+### ARTICLE 4. ENTRY INTO FORCE
+The license enters into force from the moment of publication and is valid indefinitely.
+Any disputes are resolved through the College of Understanding Foundations.
+
+---
+*"Knowledge should serve development, not enrichment"*
+ ____________________________________________________________________________________________
+ 
+ # Образовательная лицензия Поля
 
 ## Версия 1.0 - Для образовательной и научной литературы
 
