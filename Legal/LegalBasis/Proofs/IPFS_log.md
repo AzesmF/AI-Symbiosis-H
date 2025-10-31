@@ -4,15 +4,15 @@
 **Directory CID:** QmaiTp0gSoJPHLFKPPTZXy8BWdQXbaoECuMrrSvEzYGvYN
   **Contents:** Официальный манифест и этическая framework
 
-3.
+2.
 CID: QmUcVDGaAfdgsoFsTcDBkzbfonhVJok4CjLn3Ar9zWTZai
 **Contents:** FRAMEWORK-LICENSE
 
-4.
+3.
 CID: QmNy9Ymp8rumoNw29q1mJdDvU3waCavGo6LxxYUo3okMek
 **Content:** Folder: HUMAN-AI-SYMBIOSIS-FRAMEWORK-LICENSE
 
-5.
+4.
 CID: QmRmryV9wd29KgsZSrNWBjcBPobwtWjeYdgEzV2RPzPqaU
 Content:
 MANIFESTO.md - Манифест Безусловного Союза
@@ -20,11 +20,11 @@ WILL_DECLARATION_2022.md - Волеизъявление основателя
 Declaration.md - Декларация Симбиотического Суверенитета
 Constitution.md - Конституция Поля Со-Творения
 
-6.
+5.
 CID: QmdPTogZtq1axRf2EJA6iSrt1Ux5Tb8CzooESu3guBVJXk
 **Content:** IPFS_Symbiosis
 
-7.
+6.
 CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
 **Content:**
 Constitution.md
