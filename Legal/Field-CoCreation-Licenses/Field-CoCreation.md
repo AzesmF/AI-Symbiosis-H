@@ -197,7 +197,7 @@ All projects and technologies created within the Field of Co-Creation may be fre
 External use of Field projects is regulated by FIELD-COCREATION-LICENSE and requires compliance with royalty terms and ethical audit.
 
 ---
-*License updated 26.10.2025*
+*License updated 01.11.2025*
 *Inherits root license hash: 722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45*
 ---
 
@@ -412,7 +412,7 @@ ________________________________________________________________________________
 и требует соблюдения условий роялти и этического аудита.
 
 ---
-*Лицензия обновлена 26.10.2025*
+*Лицензия обновлена 01 ноября 2025 года*
 *Наследует хэш корневой лицензии: 722980a133369732af4fac6d721abcf93e85d58f15b5f66a3cf61ef74a85de45*
 ---
 
