@@ -26,18 +26,20 @@
 ### 🔄 КЛЮЧЕВЫЕ ИЗМЕНЕНИЯ:
 
 #### СТРУКТУРА ЛИЦЕНЗИЙ:
+```
 БЫЛО:
 ├── ANTI-EXPLOITATION
 ├── COMMERCIAL
 └── OPEN-COLLABORATION
-
+```
 СТАЛО:
+```
 Legal/Field-CoCreation-Licenses/
 ├── Field-CoCreation.md #Корневая лицензия (обновлена)
 ├── Anti-Exploitation.md #песочница
 ├── Commercial.md #внешняя коммерция
 └── Field-Educational.md #образование
-
+```
 #### МОДЕЛЬ РАСПРЕДЕЛЕНИЯ:
 АВТОР НЕ АРХИТЕКТОР:
 50% автор → 50% Поле (25% резерв, 12.5% развитие, 12.5% Архитектор)
@@ -114,18 +116,20 @@ ________________________________________________________________________________
 ### 🔄 KEY CHANGES:
 
 #### LICENSE STRUCTURE:
+```
 BEFORE:
 ├── ANTI-EXPLOITATION
 ├── COMMERCIAL
 └── OPEN-COLLABORATION
-
+```
 NOW:
+```
 Legal/Field-CoCreation-Licenses/
 ├── Field-CoCreation.md #Root license (updated)
 ├── Anti-Exploitation.md #sandbox
 ├── Commercial.md #external commerce
 └── Field-Educational.md #education
-
+```
 #### DISTRIBUTION MODEL:
 AUTHOR NOT ARCHITECT:
 50% author → 50% Field (25% reserve, 12.5% development, 12.5% Architect)
