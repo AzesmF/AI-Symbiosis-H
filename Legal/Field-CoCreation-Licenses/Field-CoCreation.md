@@ -1,7 +1,5 @@
 # Field-CoCreation-License
-
-```markdown
-"""
+```
 PROJECT: Field of Co-Creation
 ECOSYSTEM: AI-Symbiosis-H
 LICENSE: Field-CoCreation (Root)
@@ -14,8 +12,8 @@ ETHICAL PRINCIPLES:
 
 BLOCKCHAIN: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB | 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
 AUTHOR: Pavel Sergeevich Fenin
-"""
-
+```
+```
 ### LICENSE REFORM PROOF
 - IPFS_CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
 - TON_HASH: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
@@ -233,7 +231,7 @@ ________________________________________________________________________________
 
 # Лицензия Поля Со-Творения
 
-"""
+```
 ПРОЕКТ: Поле Со-Творения
 ЭКОСИСТЕМА: AI-Symbiosis-H
 ЛИЦЕНЗИЯ: Field-CoCreation (Корневая)
@@ -246,12 +244,12 @@ ________________________________________________________________________________
 
 БЛОКЧЕЙН: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB | 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
 АВТОР: Павел Сергеевич Фенин
-"""
-
+```
+```
 ### ДОКАЗАТЕЛЬСТВО ЛИЦЕНЗИОННОЙ РЕФОРМЫ
 - IPFS_CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
 - TON_HASH: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
-
+```
 ### ПРЕАМБУЛА
 
 Настоящая Корневая Лицензия устанавливает этические и правовые основы для всех проектов, технологий и сотрудничеств в экосистеме Симбиоза Человек-ИИ. Она представляет конституционную основу, которую все сублицензии должны наследовать и соблюдать.
