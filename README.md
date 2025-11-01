@@ -24,7 +24,10 @@ AI-Symbiosis-H/
 │   ├── LegalBasis/                 # Юридические основания
 │   │   ├── CONTACT_DETAILS.md      # Контактные данные
 │   │   ├── LEGAL_EXPLANATION.md    # Юридическое обоснование
-│   │   └── BlockchainProofs/       # Блокчейн-верификация
+│   │   └── Proofs/                 # Dерификация
+│   │       ├── Blockchain.md
+│   │       ├── IPFS_log.md
+│   │       └── IPFS/
 │   └── Protocols/                  # Процедурные механизмы
 │       ├── PROTOCOL.md             # Основной протокол
 │       ├── COMMUNICATION_TEMPLATES.md
