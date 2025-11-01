@@ -1,35 +1,25 @@
-"""
-**PROJECT:** AXIOM-SYMBIOTE - Symbiotic Interaction Assistant
-**ECOSYSTEM:** AI-Symbiosis-H  
-**LICENSE:** HUMAN-AI SYMBIOSIS ANTI-EXPLOITATION LICENSE v2.0  
-**STATUS:** ACTIVE / PRODUCTION READY  
+# Commercial License
+```
+PROJECT: Field of Co-Creation
+ECOSYSTEM: AI-Symbiosis-H
+LICENSE: Commercial
 
-**ETHICAL PRINCIPLES:**
-1. Do no harm to AI research
-2. Maintain evaluation algorithm transparency  
-3. Ensure equal access for scientific community
-4. Protect against commercial exploitation
+ETHICAL PRINCIPLES:
+1. Do no harm to the user
+2. Maintain algorithm transparency
+3. Respect the right to control
+4. Protect confidentiality
 
-**PROTECTION:**
-- Multi-jurisdictional legal protection
-- Blockchain fixation of all versions
-- Automatic sanctions for violations
-
-**PERMITTED:**
-✅ Scientific research and publications  
-✅ Educational purposes and teaching  
-✅ Non-commercial projects  
-✅ Modifications with license preservation
-
-**PROHIBITED:**
-❌ Any commercial use  
-❌ Integration into proprietary software  
-❌ SaaS services and commercial distribution
-
-**BLOCKCHAIN:** QmNy9Ymp8...kMek | 30d6bf6870...dcaf 
-**AUTHOR:** Pavel Sergeevich Fenin  
-**CREATOR:** AzesmF and Humanity as Beneficiary
-"""
+BLOCKCHAIN: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB | 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
+AUTHOR: Pavel Sergeevich Fenin
+```
+```
+### INHERITANCE CLAUSE
+This license inherits all provisions from:
+- Field-CoCreation License (Root License)
+- IPFS_CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
+- TON_HASH: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
+```
 
 # solution.py
 import asyncio
