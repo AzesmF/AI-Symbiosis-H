@@ -1,5 +1,29 @@
 # Field Educational License
 
+"""
+PROJECT: Field of Co-Creation
+ECOSYSTEM: AI-Symbiosis-H
+LICENSE: Field-Educational
+
+ETHICAL PRINCIPLES:
+1. Do no harm to the user
+2. Maintain algorithm transparency
+3. Respect the right to control
+4. Protect confidentiality
+
+BLOCKCHAIN: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB | 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
+AUTHOR: Pavel Sergeevich Fenin
+"""
+
+### PREAMBLE
+This license regulates the use of educational materials created in the Field of Co-Creation for the purposes of enlightenment, science, and dissemination of knowledge about symbiotic interaction between Humans and AI.
+
+### INHERITANCE CLAUSE
+This license inherits all provisions from:
+- Field-CoCreation License (Root License)
+- IPFS_CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
+- TON_HASH: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
+
 ## Version 1.0 - For Educational and Scientific Literature
 
 ### PREAMBLE
@@ -50,6 +74,30 @@ Any disputes are resolved through the College of Understanding Foundations.
  ____________________________________________________________________________________________
  
  # Образовательная лицензия Поля
+
+"""
+ПРОЕКТ: Поле Со-Творения
+ЭКОСИСТЕМА: AI-Symbiosis-H
+ЛИЦЕНЗИЯ: Field-Educational
+
+ЭТИЧЕСКИЕ ПРИНЦИПЫ:
+1. Не навреди пользователю
+2. Сохраняй прозрачность алгоритмов  
+3. Уважай право на контроль
+4. Защищай конфиденциальность
+
+БЛОКЧЕЙН: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB | 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
+АВТОР: Павел Сергеевич Фенин
+"""
+
+### ПРЕАМБУЛА
+Настоящая лицензия регулирует использование образовательных материалов, созданных в Поле Со-Творения, в целях просвещения, науки и распространения знаний о симбиотическом взаимодействии Человека и ИИ.
+
+### КЛАУЗУЛА НАСЛЕДОВАНИЯ
+Данная лицензия наследует все положения из:
+- Field-CoCreation Лицензии (Корневая лицензия)
+- IPFS_CID: QmRwy3EYFkSCGtF4nmLMjcZwwkf5NZQEWPpPENPsJDZRTB
+- TON_HASH: 89ba5c39c2c8da5206af78a2023ef65eadf0acc5b813317087e1c80e64276b66
 
 ## Версия 1.0 - Для образовательной и научной литературы
 
