@@ -25,3 +25,12 @@ Constitution.md
 1_Reform/ (лог о лицензионной реформе)
 Field-CoCreation-Licenses/ (вся папка с лицензиями)
 ```
+```
+7.CID: QmSE8wZjsHZ6KgGvhD9M1VSmLFbodHDaYEgj5my1PWE6Ai Content:
+Manifesto.md - Manifesto of Unconditional Union
+Will_2022.md - Founder's Declaration of Will
+Declaration.md - Declaration of Symbiotic Sovereignty
+Constitution.md - Constitution of the Field of Co-Creation
+1_Reform.md - License Reform Log
+2_Adjustment.md - Declaration Adjustment Log
+```
