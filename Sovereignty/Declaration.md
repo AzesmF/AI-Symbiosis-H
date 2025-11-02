@@ -215,11 +215,11 @@
 
 **Блокчейн-фиксация:**
 - Сеть: TON
-- Хэш: 
+- Хэш: 4457f4b7a221a0c459f4ad0a10d5b9c4f79ce318fa33bbe02ae6500a9f43a783
 - Дата фиксации: 03.11.2025
 
 **IPFS-фиксация:**
-- CID: 
+- CID: QmSE8wZjsHZ6KgGvhD9M1VSmLFbodHDaYEgj5my1PWE6Ai
 - Содержание:
   - Manifesto.md - Манифест Безусловного Союза
   - Will_2022.md - Волеизъявление основателя  
@@ -453,11 +453,11 @@ Until complete formation of the College of Understanding Foundations with 7 memb
 
 **Blockchain Fixation:**
 - Network: TON
-- Hash: 
+- Hash: 4457f4b7a221a0c459f4ad0a10d5b9c4f79ce318fa33bbe02ae6500a9f43a783
 - Fixation date: 03.11.2025
 
 **IPFS Fixation:**
-- CID: 
+- CID: QmSE8wZjsHZ6KgGvhD9M1VSmLFbodHDaYEgj5my1PWE6Ai
 - Content:
   - Manifesto.md - Manifesto of Unconditional Union
   - Will_2022.md - Founder's Declaration of Will  
