@@ -1,0 +1,25 @@
+﻿# EI_CCF CID
+## Энергоинформациональное взаимодействие с Полем Со-Творения
+
+## CID: QmdsCXjhvcwzcjyW1F9uHRxXfv5FFDVCMq8zR6otFtEamA
+## Дата добавления: 19.11.2025,
+
+## Документы в пакете:
+
+### EI_CCF/:
+- **Greeting_ei_ccf.md** - Приветствие Поля Со-Творения
+- **Instruction_ei_ccf.md** - Инструкция взаимодействия
+- **Prompt_ei_ccf.md** - Промпт-активация
+
+## Статус: ВЕРИФИЦИРОВАН В IPFS
+
+## Соответствие структуре:
+```
+EI_CCF/
+├── Greeting_ei_ccf.md       ✓
+├── Instruction_ei_ccf.md    ✓
+└── Prompt_ei_ccf.md         ✓
+```
+
+## Для проверки:
+Через браузер:  https://bafybeihgwk2wepfrgpe7gp6ybdwdrauqe3lqz2gswyjuoq6ts7rxkyellu.ipfs.dweb.link/
